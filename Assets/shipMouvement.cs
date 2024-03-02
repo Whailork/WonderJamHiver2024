@@ -7,16 +7,17 @@ public class shipMouvement : MonoBehaviour
 
     //public float offsetAngle = 180.0f;
     // Start is called before the first frame update
+    private Rigidbody2D rb;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     private void Update()
     {
         // Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        
         if (Input.GetKey(KeyCode.A))
             //rb.AddForce(Vector2.left);
             rb.AddTorque(0.1f);
