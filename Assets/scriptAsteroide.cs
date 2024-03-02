@@ -15,6 +15,15 @@ public class scriptAsteroide : MonoBehaviour
     private string form;
 
     private string motif;
+
+    private Rigidbody2D rb;
+
+    public string pattern;
+
+    private Vector2 direction;
+
+    public float speed = 5f;
+
     public int vie;
 
     public Sprite[] spriteArray;
@@ -33,7 +42,11 @@ public class scriptAsteroide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Random random = new Random();
+        //direction = new Vector2((float)random.Next(0, 100) / 100, (float)random.Next(0, 100) / 100);
+        direction = new Vector2(0.866f, 0.5f);
+        rb = GetComponent<Rigidbody2D>();
+        setPattern();
     }
 
     void setColor(int c)
@@ -84,7 +97,7 @@ public class scriptAsteroide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        updatePattern();
     }
 
     private void dropLoot()
@@ -121,4 +134,39 @@ public class scriptAsteroide : MonoBehaviour
         
         
     }
+
+    public void setPattern()
+    {
+        pattern = "parabol";
+    } 
+    
+    public void updatePattern()
+    {
+        switch (pattern)
+        {
+            case ("straight"):
+                //rb.AddForce(new Vector2((float)random.Next(0, 100) / 100, (float)random.Next(0, 100) / 100));
+                rb.AddForce(direction);
+                rb.velocity = rb.velocity.normalized * speed;
+                break;
+
+            case ("sinus"):
+             
+                //equation traveling wave https://labs.phys.utk.edu/mbreinig/phys221core/modules/m11/traveling_waves.html
+                rb.AddForce(new Vector2((float)direction.x, (float)(2.0f * Math.Cos(5.0f * (float)Time.time)) + (float)direction.y));
+              
+                rb.velocity = rb.velocity.normalized * speed;
+                break;
+
+
+            case ("parabol"):
+
+                rb.AddForce(new Vector2((float)direction.x + 5f , ((float)(-1f * 3f * Time.time)) + 5f + (float)direction.y));
+
+                rb.velocity = rb.velocity.normalized * speed;
+                break;
+        }
+           
+    }
+
 }
