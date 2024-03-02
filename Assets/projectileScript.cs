@@ -29,10 +29,10 @@ public class projectileScript : MonoBehaviour
     {
         if (colision.collider.CompareTag("asteroid"))
         {
-            GameValues.instance.incrementNbGenes(1);
+           
             scriptAsteroide asteroid = colision.collider.GetComponent<scriptAsteroide>();
             asteroid.takeDamage();
-            Destroy(this);
+            Destroy(this.gameObject);
             
         }
     }

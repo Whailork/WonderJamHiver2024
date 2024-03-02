@@ -135,10 +135,11 @@ public class asteroidGeneratorScript : MonoBehaviour
 
     public void generateAsteroid()
     {
-        Debug.Log("spawn asteroid");
+        
         GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
         scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
         myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+        
     }
     
     // Update is called once per frame
