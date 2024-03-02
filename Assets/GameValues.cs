@@ -30,6 +30,12 @@ public class GameValues : MonoBehaviour
         }
     }
 
+    public void incrementNbGenes(int value)
+    {
+        Debug.Log("+1 gene");
+        nbGenes += value;
+    }
+
     public void calculScore()
     {
         if (score == 0)
