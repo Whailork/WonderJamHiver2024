@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61547792fe0996847b6bb996fb1527c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagAnimal: {fileID: 0}
+  tagAnimal: {fileID: 784719181}
 --- !u!4 &1318980097
 Transform:
   m_ObjectHideFlags: 0
