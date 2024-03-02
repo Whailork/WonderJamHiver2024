@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using Random = System.Random;
 using Color = System.Drawing.Color;
 public class asteroidGeneratorScript : MonoBehaviour
 {
-    
+    private int cooldown = 0;
     private Color color = new Color();
 
     private string form;
@@ -133,6 +134,7 @@ public class asteroidGeneratorScript : MonoBehaviour
 
     public void generateAsteroid()
     {
+        Debug.Log("spawn asteroid");
         GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
         scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
         myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
@@ -142,5 +144,18 @@ public class asteroidGeneratorScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void FixedUpdate()
+    {
+        if (cooldown == 0)
+        {
+            generateAsteroid();
+            cooldown = 60;
+        }
+        else
+        {
+            cooldown--;
+        }
     }
 }

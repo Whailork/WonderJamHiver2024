@@ -44,18 +44,20 @@ public class scriptAsteroide : MonoBehaviour
         switch (getForm())
         {
             case "cercle":
-                newSprite = 
+                newSprite = spriteArray[0];
                 break;
             case "hexagone":
+                newSprite = spriteArray[1];
                 break;
             case "losange":
                 break;
             case "carree":
-                newSprite = spriteArray[0];
+                newSprite = spriteArray[2];
                 break;
             case "pentagone":
                 break;
             case "triangle":
+                newSprite = spriteArray[3];
                 break;
             default:
                 Console.WriteLine("form does not exist");
