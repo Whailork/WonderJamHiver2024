@@ -49,7 +49,7 @@ public class asteroidGeneratorScript : MonoBehaviour
         return motif;
     }
     
-    Color assignColor()
+    int assignColor()
     {
         Random random = new Random();
         int nb = random.Next(0, 100);
@@ -57,30 +57,34 @@ public class asteroidGeneratorScript : MonoBehaviour
         switch (nb)
         {
             case 0:
-                setColor(Color.Purple);
+                return 5;
+                //setColor(Color.Purple);
                 break;
             case > 0 and <= 4:
-                setColor(Color.Blue);
+                return 4;
+                //setColor(Color.Blue);
                 break;
             case > 4 and <= 11:
-                setColor(Color.Green);
+                return 3;
+                //setColor(Color.Green);
                 break;
             case > 11 and <= 24:
-                setColor(Color.Yellow);
+                return 2;
+                //setColor(Color.Yellow);
                 break;
             case > 24 and <= 49:
+                return 1;
                 // color = Color.orange;
-                setColor(Color.Orange);
+                //setColor(Color.Orange);
                 break;
             default:
-                setColor(Color.Red);
+                return 0;
+                //setColor(Color.Red);
                 break;
         }
-
-        return getColor();
     }
 
-    string assignForm()
+    int assignForm()
     {
         Random random = new Random();
         int nb = random.Next(0, 100);
@@ -88,57 +92,52 @@ public class asteroidGeneratorScript : MonoBehaviour
         switch (nb)
         {
             case 0:
-                setForm("cercle");
+                return 5;
+                //setForm("cercle");
                 break;
             case > 0 and <= 4:
-                setForm("hexagone");
+                return 4;
+                //setForm("hexagone");
                 break;
             case > 4 and <= 14:
-                setForm("losange");
+                return 3;
+                //setForm("losange");
                 break;
             case > 14 and <= 24:
-                setForm("carree");
+                return 2;
+                //setForm("carree");
                 break;
             case > 24 and <= 49:
-                // color = Color.orange;
-                setForm("pentagone");
+                return 1;
+                //setForm("pentagone");
                 break;
             default:
-                setForm("triangle");
+                return 0;
+                //setForm("triangle");
                 break;
         }
-        return getForm();
     }
 
-    string assignMotif()
+    int assignMotif()
     {
         Random random = new Random();
         int nb = random.Next(0, 4);
         
-        switch (nb)
-        {
-            case 0:
-                setForm("ligne");
-                break;
-            case 1:
-                setForm("vague");
-                break;
-            case 2:
-                setForm("point");
-                break;
-            default:
-                setForm("carreau");
-                break;
-        }
-        return getForm();
+        // 0 = ligne
+        // 1 = carreau
+        // 2 = point
+        // 3 = vague
+
+        return nb;
     }
 
     public void generateAsteroid()
     {
-        Debug.Log("spawn asteroid");
+        
         GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
         scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
         myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+        
     }
     
     // Update is called once per frame

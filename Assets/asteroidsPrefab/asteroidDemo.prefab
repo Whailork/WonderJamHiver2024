@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6006878433709297599}
   m_Layer: 0
   m_Name: asteroidDemo
-  m_TagString: Untagged
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,8 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c777ce42eb0df549a83b19491e72cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vie: 1
   spriteArray:
   - {fileID: -2413806693520163455, guid: 5ec18b9cd59913346b2b9e8170d8bda2, type: 3}
   - {fileID: 2747690628134850419, guid: 34aa040a56b39b443ba0177015362570, type: 3}
   - {fileID: 7482667652216324306, guid: a6258e8120f3f634cbce5c28301fa661, type: 3}
   - {fileID: 7482667652216324306, guid: 232cf5fcb62e93f459453841b8c6e645, type: 3}
+  - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
