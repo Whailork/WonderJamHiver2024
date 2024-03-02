@@ -127,7 +127,7 @@ public class scriptAsteroide : MonoBehaviour
         Debug.Log("asteroid Damage");
         if (vie <= 0)
         {
-            GameValues.instance.incrementNbGenes(1);
+            dropLoot();
             RunManager.enemiesCleared++;
             Destroy(this.gameObject);
         }
