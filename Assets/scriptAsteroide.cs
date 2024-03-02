@@ -116,6 +116,7 @@ public class scriptAsteroide : MonoBehaviour
                 newSprite = spriteArray[1];
                 break;
             case "losange":
+                newSprite = spriteArray[4];
                 break;
             case "carree":
                 newSprite = spriteArray[2];
@@ -141,12 +142,35 @@ public class scriptAsteroide : MonoBehaviour
         
     }
 
+    private void dropLoot()
+    {
+        Random random = new Random();
+        int colorRnd = random.Next(0, 100);
+        if (colorRnd >= 50)
+        {
+            GameValues.instance.addItem(color.Name,1);
+        }
+
+        int formeRnd = random.Next(0, 100);
+        if (formeRnd >= 50)
+        {
+            GameValues.instance.addItem(form,1);
+        }
+        int motifRnd = random.Next(0, 100);
+        if (motifRnd >= 50)
+        {
+            GameValues.instance.addItem(motif,1);
+        }
+
+    }
     public void takeDamage()
     {
         vie--;
+        Debug.Log("asteroid Damage");
         if (vie <= 0)
         {
-            Destroy(this);
+            GameValues.instance.incrementNbGenes(1);
+            Destroy(this.gameObject);
         }
         
         

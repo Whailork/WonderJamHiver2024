@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class shipMouvement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class shipMouvement : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject projectilePrefab;
     private int cooldown = 0;
+    public int vie;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -69,6 +71,19 @@ public class shipMouvement : MonoBehaviour
         if (cooldown != 0)
         {
             cooldown--;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D colision)
+    {
+        if (colision.collider.CompareTag("asteroid"))
+        {
+            //vie--; ne pas oublier de le remettre
+            if (vie <= 0)
+            {
+                SceneManager.LoadScene("mainMenuScene");
+                Destroy(this.gameObject);
+            }
+            
         }
     }
 }
