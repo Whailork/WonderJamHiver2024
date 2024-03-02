@@ -104,11 +104,11 @@ public class asteroidGeneratorScript : MonoBehaviour
                 //setForm("losange");
                 break;
             case > 14 and <= 24:
-                return 2;
+                return 2; 
                 //setForm("carree");
                 break;
             case > 24 and <= 49:
-                return 1;
+                return 1;// losange pour l'intant
                 //setForm("pentagone");
                 break;
             default:
