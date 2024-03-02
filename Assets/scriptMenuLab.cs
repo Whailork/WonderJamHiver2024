@@ -14,6 +14,7 @@ public class scriptMenuLab : MonoBehaviour
     //public TMPro.TextMeshProUGUI tagAnimal;
     //public Textmeshpro tagAnimal;
     string strTagAnimal;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -77,5 +78,8 @@ public class scriptMenuLab : MonoBehaviour
                 break;
         }
     }
+    
+    
 
 }
+

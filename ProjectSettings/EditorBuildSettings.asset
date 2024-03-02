@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/geneSplicerScene.unity
     guid: 7b025fdee5f0dcc4ab141d7726a8711a
+  - enabled: 1
+    path: Assets/Scenes/sceneLaboratory.unity
+    guid: d3a0ced124546d041a6155beff71e4a6
   m_configObjects: {}

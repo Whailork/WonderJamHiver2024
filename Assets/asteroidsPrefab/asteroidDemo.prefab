@@ -173,8 +173,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vie: 1
   spriteArray:
-  - {fileID: -2413806693520163455, guid: 5ec18b9cd59913346b2b9e8170d8bda2, type: 3}
-  - {fileID: 2747690628134850419, guid: 34aa040a56b39b443ba0177015362570, type: 3}
-  - {fileID: 7482667652216324306, guid: a6258e8120f3f634cbce5c28301fa661, type: 3}
   - {fileID: 7482667652216324306, guid: 232cf5fcb62e93f459453841b8c6e645, type: 3}
   - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
+  - {fileID: 7482667652216324306, guid: a6258e8120f3f634cbce5c28301fa661, type: 3}
+  - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
+  - {fileID: 2747690628134850419, guid: 34aa040a56b39b443ba0177015362570, type: 3}
+  - {fileID: -2413806693520163455, guid: 5ec18b9cd59913346b2b9e8170d8bda2, type: 3}
+  motifArray:
+  - {fileID: 21300000, guid: ec05601b980f45d489d6681c43056d6a, type: 3}
+  - {fileID: 21300000, guid: 5d012aed1e0a19b4eae1d01023de9341, type: 3}
