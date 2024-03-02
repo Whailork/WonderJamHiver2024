@@ -20,7 +20,7 @@ public class GameValues : MonoBehaviour
     public List<int> craftedInBestiaire = new();
     public List<Ressource> inventory = new();
     public List<Ressource> currentRunInventory = new();
-    public List<Combinaison> recettesAnimaux;
+    public List<Combinaison> recettesAnimaux = new();
 
     private void Awake()
     {
