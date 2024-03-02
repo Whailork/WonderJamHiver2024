@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,13 +20,16 @@ public class GameValues : MonoBehaviour
     public List<int> craftedInBestiaire = new();
     public List<Ressource> inventory = new();
     public List<Ressource> currentRunInventory = new();
+    public List<Combinaison> recettesAnimaux;
 
     private void Awake()
     {
         if (instance == null)
         {
+            
             instance = this;
             createInventory(inventory);
+            loadCombinaisons();
             DontDestroyOnLoad(this);
         }
         else
@@ -34,7 +38,14 @@ public class GameValues : MonoBehaviour
         }
     }
 
-    public void addItem(string name, int nb)
+    private void loadCombinaisons()
+    {
+        recettesAnimaux.Add(new Combinaison("rat","mammifere",new Ressource("Rouge","common",1,true),new Ressource("Triangle","common",1,true),new Ressource("Ligne","common",1,true)));
+        recettesAnimaux.Add(new Combinaison("rat","mammifere",new Ressource("Rouge","common",1,true),new Ressource("Triangle","common",1,true),new Ressource("Ligne","common",1,true)));
+
+    }
+
+    public void addItem(string name, int nb, List<Ressource> inventory)
     {
         foreach(Ressource ressource in inventory)
         {
@@ -43,6 +54,19 @@ public class GameValues : MonoBehaviour
                 ressource.number += nb;
             }
         }
+    }
+
+    public int getItem(string name, List<Ressource> inventory)
+    {
+        foreach(Ressource ressource in inventory)
+        {
+            if (ressource.name == name)
+            {
+                return ressource.number;
+            }
+        }
+
+        return 0;
     }
     public void createInventory(List<Ressource> inventory)
     {
@@ -111,6 +135,15 @@ public class GameValues : MonoBehaviour
             }
         }
     }
+
+    public void encaisserGains()
+    {
+        foreach (Ressource ressource in currentRunInventory)
+        {
+            addItem(ressource.name,ressource.number,inventory);
+        }
+    }
+
 }
 
 public class Ressource
@@ -129,3 +162,20 @@ public class Ressource
         this.gene = gene;
     }
 }
+public class Combinaison
+{
+    public string animal { get; set; }
+    public string regneAnimal { get; set; }
+    public Ressource requiredColor { get; set; }
+    public Ressource requiredShape { get; set; }
+    public Ressource requiredMotif { get; set; }
+    public Combinaison(string animal, string regneAnimal, Ressource requiredColor, Ressource requiredShape,Ressource requiredMotif)
+    {
+        this.animal = animal;
+        this.regneAnimal = regneAnimal;
+        this.requiredColor = requiredColor;
+        this.requiredShape = requiredShape;
+        this.requiredMotif = requiredMotif;
+    }
+}
+

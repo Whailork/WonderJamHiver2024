@@ -134,9 +134,15 @@ public class asteroidGeneratorScript : MonoBehaviour
     public void generateAsteroid()
     {
         
-        GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
-        scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
-        myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+        
+        if (RunManager.enemiesLeft != 0)
+        {
+            GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
+            scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
+            myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+            RunManager.enemiesLeft--;
+        }
+        
         
     }
     
