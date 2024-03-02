@@ -16,6 +16,7 @@ public class scriptAsteroide : MonoBehaviour
     private string motif;
 
     public Sprite[] spriteArray;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class scriptAsteroide : MonoBehaviour
     void setColor(Color c)
     {
         color = c;
+        changeColor(c);
     }
 
     Color getColor()
@@ -34,14 +36,72 @@ public class scriptAsteroide : MonoBehaviour
     void setForm(string f)
     {
         form = f;
-        changeForm();
+        changeForm(f);
     }
 
-    void changeForm()
+    string getForm()
+    {
+        return form;
+    }
+    
+    void setMotif(string m)
+    {
+        motif = m;
+        changeMotif(m);
+    }
+
+    string getMotif()
+    {
+        return motif;
+    }
+
+    public void createAsteroid(Color c, string m, string f)
+    {
+        setColor(c);
+        setMotif(m);
+        setForm(f);
+    }
+
+    void changeColor(Color c)
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        UnityEngineColor newColor = new UnityEngine.Color(c.R / 255f, c.G / 255f, c.B / 255f, c.A / 255f);
+        
+        spriteRenderer.color = newColor;
+    }
+
+    void changeMotif(string motif)
     {
         Sprite newSprite = null;
         
-        switch (getForm())
+        switch (form)
+        {
+            case "ligne":
+                break;
+            case "vague":
+                break;
+            case "point":
+                break;
+            case "carree":
+                break;
+            case "carreau":
+                break;
+            default:
+                Console.WriteLine("form does not exist");
+                break;
+        }
+        
+        
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = newSprite;
+    }
+
+    void changeForm(string form)
+    {
+        Sprite newSprite = null;
+        
+        switch (form)
         {
             case "cercle":
                 newSprite = spriteArray[0];
@@ -68,29 +128,7 @@ public class scriptAsteroide : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = newSprite;
     }
-
-    string getForm()
-    {
-        return form;
-    }
     
-    void setMotif(string m)
-    {
-        motif = m;
-    }
-
-    string getMotif()
-    {
-        return motif;
-    }
-
-    public void createAsteroid(Color c, string m, string f)
-    {
-        setColor(c);
-        setMotif(m);
-        setForm(f);
-    }
-
     // Update is called once per frame
     void Update()
     {
