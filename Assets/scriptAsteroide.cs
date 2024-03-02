@@ -44,7 +44,7 @@ public class scriptAsteroide : MonoBehaviour
         switch (getForm())
         {
             case "cercle":
-                newSprite = 
+               // newSprite = 
                 break;
             case "hexagone":
                 break;
