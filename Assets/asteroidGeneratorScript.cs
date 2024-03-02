@@ -14,9 +14,16 @@ public class asteroidGeneratorScript : MonoBehaviour
     private string motif;
     
     public GameObject asteroid;
+
+    Camera cam;
+    float height;
+    float width;
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
+        height = 2f * cam.orthographicSize;
+        width = height * cam.aspect;
     }
     
     void setColor(Color c)
@@ -131,15 +138,46 @@ public class asteroidGeneratorScript : MonoBehaviour
         return nb;
     }
 
+    private Vector3 generatePosition()
+    {
+        Random random = new Random();
+        int nb = random.Next(0, 4);
+
+        switch (nb)
+        {
+            case (0):
+                //return new Vector3((float)(random.Next(-width / 2, width / 2)), height, 0f);
+                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, height, 0);
+
+            case (1):
+                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);
+                return new Vector3(width, (float)(random.Next(0, (int)height) - height / 2), 0);
+
+            case (2):
+                // return new Vector3((float)(random.Next(-width / 2, width / 2)), -height, 0f);
+                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, -height, 0);
+
+            case (3):
+                return new Vector3(-width, (float)(random.Next(0, (int)height)) - height / 2, 0);
+            
+            default:
+                return new Vector3(0,0,0);
+        }
+    }
+
     public void generateAsteroid()
     {
         
         
         if (RunManager.enemiesLeft != 0)
         {
-            GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
+            Vector3 position = generatePosition();
+            GameObject newAsteroid = Instantiate(asteroid, position,Quaternion.identity);
+            newAsteroid.layer = 3;
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
             myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+            myAsteroide.setPosition(position);
+            myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
             RunManager.enemiesLeft--;
         }
         
@@ -157,7 +195,7 @@ public class asteroidGeneratorScript : MonoBehaviour
         if (cooldown == 0)
         {
             generateAsteroid();
-            cooldown = 60;
+            cooldown = 30;
         }
         else
         {
