@@ -21,11 +21,15 @@ public class MenuButtons : MonoBehaviour
     public void EncaisserGains()
     {
         GameValues.instance.encaisserGains();
+        RunManager.currentRun = 0;
+        
         SceneManager.LoadScene("sceneLaboratory");
     }
 
     public void ContinuerExploration()
     {
-        
+        RunManager.newRun();
     }
+
+    
 }
