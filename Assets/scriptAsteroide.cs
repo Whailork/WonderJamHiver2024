@@ -15,6 +15,7 @@ public class scriptAsteroide : MonoBehaviour
     private string form;
 
     private string motif;
+    public int vie;
 
     public Sprite[] spriteArray;
     public Color[] colorArray =
@@ -44,7 +45,6 @@ public class scriptAsteroide : MonoBehaviour
         UnityEngineColor newColor = new UnityEngine.Color(myColor.R / 255f, myColor.G / 255f, myColor.B / 255f, myColor.A / 255f);
         spriteRenderer.color = newColor;
     }
-
     Color getColor()
     {
         return color;
@@ -84,6 +84,40 @@ public class scriptAsteroide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    private void dropLoot()
+    {
+        Random random = new Random();
+        int colorRnd = random.Next(0, 100);
+        if (colorRnd >= 50)
+        {
+            GameValues.instance.addItem(color.Name,1);
+        }
+
+        int formeRnd = random.Next(0, 100);
+        if (formeRnd >= 50)
+        {
+            GameValues.instance.addItem(form,1);
+        }
+        int motifRnd = random.Next(0, 100);
+        if (motifRnd >= 50)
+        {
+            GameValues.instance.addItem(motif,1);
+        }
+
+    }
+    public void takeDamage()
+    {
+        vie--;
+        Debug.Log("asteroid Damage");
+        if (vie <= 0)
+        {
+            GameValues.instance.incrementNbGenes(1);
+            Destroy(this.gameObject);
+        }
+        
         
     }
 }

@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 333342773992566370, guid: 10463c54febeb1e43889724d28dcb92f, type: 3}
+  vie: 1
