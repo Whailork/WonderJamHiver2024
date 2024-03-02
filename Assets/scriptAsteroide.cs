@@ -14,6 +14,7 @@ public class scriptAsteroide : MonoBehaviour
     private string form;
 
     private string motif;
+    public int vie;
 
     public Sprite[] spriteArray;
     // Start is called before the first frame update
@@ -25,8 +26,14 @@ public class scriptAsteroide : MonoBehaviour
     void setColor(Color c)
     {
         color = c;
-    }
 
+        //Color newColor = c;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        UnityEngineColor newColor = new UnityEngine.Color(c.R / 255f, c.G / 255f, c.B / 255f, c.A / 255f);
+
+        spriteRenderer.color = newColor;
+    }
     Color getColor()
     {
         return color;
@@ -94,6 +101,17 @@ public class scriptAsteroide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void takeDamage()
+    {
+        vie--;
+        if (vie <= 0)
+        {
+            Destroy(this);
+        }
+        
         
     }
 }

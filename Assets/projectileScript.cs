@@ -27,9 +27,13 @@ public class projectileScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D colision)
     {
-        /*if (colision.collider.CompareTag("asteroid"))
+        if (colision.collider.CompareTag("asteroid"))
         {
-            // le code pour détruire l'astéroid
-        }*/
+            GameValues.instance.incrementNbGenes(1);
+            scriptAsteroide asteroid = colision.collider.GetComponent<scriptAsteroide>();
+            asteroid.takeDamage();
+            Destroy(this);
+            
+        }
     }
 }
