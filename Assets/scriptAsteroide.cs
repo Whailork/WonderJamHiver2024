@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 using System.Drawing;
+using UnityEngine.UIElements;
 using Color = System.Drawing.Color;
 using UnityEngineColor = UnityEngine.Color;
 
@@ -17,6 +18,17 @@ public class scriptAsteroide : MonoBehaviour
     public int vie;
 
     public Sprite[] spriteArray;
+    public Color[] colorArray =
+    {
+        Color.Red,
+        Color.Orange,
+        Color.Yellow,
+        Color.Green,
+        Color.Blue,
+        Color.Purple
+    };
+    public Sprite[] motifArray;
+    //public Image[] motifArray {};
     
     // Start is called before the first frame update
     void Start()
@@ -24,25 +36,25 @@ public class scriptAsteroide : MonoBehaviour
         
     }
 
-    void setColor(Color c)
+    void setColor(int c)
     {
-        color = c;
+        color = colorArray[c];
 
-        //Color newColor = c;
+        Color myColor = color;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-
-        UnityEngineColor newColor = new UnityEngine.Color(c.R / 255f, c.G / 255f, c.B / 255f, c.A / 255f);
-
+        UnityEngineColor newColor = new UnityEngine.Color(myColor.R / 255f, myColor.G / 255f, myColor.B / 255f, myColor.A / 255f);
         spriteRenderer.color = newColor;
     }
     Color getColor()
     {
         return color;
     }
-    void setForm(string f)
+    void setForm(int f)
     {
-        form = f;
-        changeForm(f);
+        form = spriteArray[f].name;
+        
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = spriteArray[f];
     }
 
     string getForm()
@@ -50,10 +62,11 @@ public class scriptAsteroide : MonoBehaviour
         return form;
     }
     
-    void setMotif(string m)
+    void setMotif(int m)
     {
-        motif = m;
-        changeMotif(m);
+        //motif = m;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = spriteArray[0];
     }
 
     string getMotif()
@@ -61,79 +74,11 @@ public class scriptAsteroide : MonoBehaviour
         return motif;
     }
 
-    public void createAsteroid(Color c, string m, string f)
+    public void createAsteroid(int c, int m, int f)
     {
         setColor(c);
         setMotif(m);
         setForm(f);
-    }
-
-    void changeColor(Color c)
-    {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-
-        UnityEngineColor newColor = new UnityEngine.Color(c.R / 255f, c.G / 255f, c.B / 255f, c.A / 255f);
-        
-        spriteRenderer.color = newColor;
-    }
-
-    void changeMotif(string motif)
-    {
-        Sprite newSprite = null;
-        
-        switch (form)
-        {
-            case "ligne":
-                break;
-            case "vague":
-                break;
-            case "point":
-                break;
-            case "carree":
-                break;
-            case "carreau":
-                break;
-            default:
-                Console.WriteLine("form does not exist");
-                break;
-        }
-        
-        
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = newSprite;
-    }
-
-    void changeForm(string form)
-    {
-        Sprite newSprite = null;
-        
-        switch (form)
-        {
-            case "cercle":
-                newSprite = spriteArray[0];
-                break;
-            case "hexagone":
-                newSprite = spriteArray[1];
-                break;
-            case "losange":
-                newSprite = spriteArray[4];
-                break;
-            case "carree":
-                newSprite = spriteArray[2];
-                break;
-            case "pentagone":
-                break;
-            case "triangle":
-                newSprite = spriteArray[3];
-                break;
-            default:
-                Console.WriteLine("form does not exist");
-                break;
-        }
-        
-        
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = newSprite;
     }
     
     // Update is called once per frame
