@@ -16,7 +16,7 @@ public class RunManager : MonoBehaviour
     
     void Start()
     {
-        GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity);
+       // GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity);
         newRun();
     }
 
@@ -44,6 +44,6 @@ public class RunManager : MonoBehaviour
     public void askForNewRun()
     {
         alertShown = true;
-        GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity);
+        //GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity);
     }
 }
