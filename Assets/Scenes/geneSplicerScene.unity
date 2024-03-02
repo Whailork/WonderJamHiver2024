@@ -566,7 +566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6006878433709297599, guid: 63a9cd8674e25464ba30bf11f5f671c5, type: 3}
       propertyPath: motifArray.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6006878433709297599, guid: 63a9cd8674e25464ba30bf11f5f671c5, type: 3}
       propertyPath: spriteArray.Array.size
@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 6006878433709297599, guid: 63a9cd8674e25464ba30bf11f5f671c5, type: 3}
       propertyPath: motifArray.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: abc58fd5bd6f3394fb18ab4f7db0cf23, type: 3}
+      objectReference: {fileID: 21300000, guid: 5776ceafd4b06774e8c6dc3be9c35722, type: 3}
     - target: {fileID: 6006878433709297599, guid: 63a9cd8674e25464ba30bf11f5f671c5, type: 3}
       propertyPath: motifArray.Array.data[1]
       value: 

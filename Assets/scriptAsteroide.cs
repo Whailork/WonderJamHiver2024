@@ -66,7 +66,7 @@ public class scriptAsteroide : MonoBehaviour
     {
         //motif = m;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = spriteArray[m];
+        spriteRenderer.sprite = spriteArray[0];
     }
 
     string getMotif()
