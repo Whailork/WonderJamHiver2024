@@ -29,7 +29,11 @@ public class projectileScript : MonoBehaviour
     {
         if (colision.collider.CompareTag("asteroid"))
         {
-            // le code pour détruire l'astéroid
+           
+            scriptAsteroide asteroid = colision.collider.GetComponent<scriptAsteroide>();
+            asteroid.takeDamage();
+            Destroy(this.gameObject);
+            
         }
     }
 }
