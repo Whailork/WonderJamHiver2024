@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5448872657284087143}
   - component: {fileID: 7519909435087558958}
   - component: {fileID: 4963369630220273951}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 912606996140883585}
   - component: {fileID: 5855564953908620649}
   - component: {fileID: 8204907774382030826}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 4799185417221882791}
   - component: {fileID: 4591481908245995559}
   - component: {fileID: 1596172778200359991}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 2423016599558748649}
   - component: {fileID: 5408866522892986360}
   - component: {fileID: 6146366426517320002}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 1934249599387151236}
   - component: {fileID: 13298126302195030}
   - component: {fileID: 7689351648366867404}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755675255023906034, guid: b77af469854053345ad04c333d4df495, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1890145902868828197, guid: b77af469854053345ad04c333d4df495, type: 3}
       propertyPath: m_Pivot.x
@@ -886,11 +886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5021071951377562925, guid: b77af469854053345ad04c333d4df495, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6172009653971510163, guid: b77af469854053345ad04c333d4df495, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8184752498278875031, guid: b77af469854053345ad04c333d4df495, type: 3}
       propertyPath: m_AnchorMax.x
