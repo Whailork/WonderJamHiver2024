@@ -148,18 +148,18 @@ public class scriptAsteroide : MonoBehaviour
         int colorRnd = random.Next(0, 100);
         if (colorRnd >= 50)
         {
-            GameValues.instance.addItem(color.Name,1);
+            GameValues.instance.addItem(color.Name,1, GameValues.instance.inventory);
         }
 
         int formeRnd = random.Next(0, 100);
         if (formeRnd >= 50)
         {
-            GameValues.instance.addItem(form,1);
+            GameValues.instance.addItem(form,1,GameValues.instance.inventory);
         }
         int motifRnd = random.Next(0, 100);
         if (motifRnd >= 50)
         {
-            GameValues.instance.addItem(motif,1);
+            GameValues.instance.addItem(motif,1,GameValues.instance.inventory);
         }
 
     }
@@ -170,6 +170,7 @@ public class scriptAsteroide : MonoBehaviour
         if (vie <= 0)
         {
             GameValues.instance.incrementNbGenes(1);
+            RunManager.enemiesCleared++;
             Destroy(this.gameObject);
         }
         
