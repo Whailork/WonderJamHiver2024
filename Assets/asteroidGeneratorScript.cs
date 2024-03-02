@@ -22,6 +22,7 @@ public class asteroidGeneratorScript : MonoBehaviour
     void setColor(Color c)
     {
         color = c;
+        
     }
 
     Color getColor()
