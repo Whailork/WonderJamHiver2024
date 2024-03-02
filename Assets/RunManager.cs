@@ -7,9 +7,9 @@ public class RunManager : MonoBehaviour
     // Start is called before the first frame update
     public static int enemiesLeft { get; set; }
     public static int enemiesCleared = 0;
-    public int currentRun = 0;
-    public int baseEnemiNb;
-    public int enemiInRun = 0;
+    public static int currentRun = 0;
+    public static int baseEnemiNb;
+    public static int enemiInRun = 0;
     public GameObject newRunAlert;
     private bool alertShown = false;
    
@@ -19,7 +19,7 @@ public class RunManager : MonoBehaviour
         newRun();
     }
 
-    public void newRun()
+    public static void newRun()
     {
         currentRun++;
         enemiInRun = baseEnemiNb + currentRun - 1;
