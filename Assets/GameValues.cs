@@ -118,24 +118,24 @@ public class GameValues : MonoBehaviour
     public void createInventory(List<Ressource> inventory)
     {
         //couleurs
-        inventory.Add(new Ressource("Red","common",0,true));
-        inventory.Add(new Ressource("Orange","common",0,true));
-        inventory.Add(new Ressource("Yellow","uncommon",0,true));
-        inventory.Add(new Ressource("Green","uncommon",0,true));
-        inventory.Add(new Ressource("Blue","rare",0,true));
-        inventory.Add(new Ressource("Purple","rare",0,true));
+        inventory.Add(new Ressource("Red","common",20,true));
+        inventory.Add(new Ressource("Orange","common",20,true));
+        inventory.Add(new Ressource("Yellow","uncommon",20,true));
+        inventory.Add(new Ressource("Green","uncommon",20,true));
+        inventory.Add(new Ressource("Blue","rare",20,true));
+        inventory.Add(new Ressource("Purple","rare",20,true));
         //formes
-        inventory.Add(new Ressource("Triangle","common",0,true));
-        inventory.Add(new Ressource("Pentagone","common",0,true));
-        inventory.Add(new Ressource("Carre","uncommon",0,true));
-        inventory.Add(new Ressource("Losange","uncommon",0,true));
-        inventory.Add(new Ressource("Hexagone","rare",0,true));
-        inventory.Add(new Ressource("Cercle","rare",0,true));
+        inventory.Add(new Ressource("Triangle","common",20,true));
+        inventory.Add(new Ressource("Pentagone","common",20,true));
+        inventory.Add(new Ressource("Carre","uncommon",20,true));
+        inventory.Add(new Ressource("Losange","uncommon",20,true));
+        inventory.Add(new Ressource("Hexagone","rare",20,true));
+        inventory.Add(new Ressource("Cercle","rare",20,true));
         //motifs
-        inventory.Add(new Ressource("Ligne","common",0,true));
-        inventory.Add(new Ressource("Carreau","common",0,true));
-        inventory.Add(new Ressource("Pois","common",0,true));
-        inventory.Add(new Ressource("Vague","common",0,true));
+        inventory.Add(new Ressource("Ligne","common",20,true));
+        inventory.Add(new Ressource("Carreau","common",20,true));
+        inventory.Add(new Ressource("Pois","common",20,true));
+        inventory.Add(new Ressource("Vague","common",20,true));
         
     }
 

@@ -52,6 +52,13 @@ public class scriptMenuLab : MonoBehaviour
     public Sprite[] arrayMotif;
 
     public Sprite[] arrayCouleurs;
+
+    public GameObject spinner;
+    public Canvas canvas;
+    public Animator animator;
+    private GameObject spinnerObject;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -316,6 +323,10 @@ public class scriptMenuLab : MonoBehaviour
 
     public void spliceBtnClicked()
     {
+        if (spinnerObject != null)
+        {
+            Destroy(spinnerObject);
+        }
         GameValues.instance.removeItem(requiredMotif.name,requiredMotif.number,GameValues.instance.inventory);
         GameValues.instance.removeItem(requiredShape.name,requiredShape.number,GameValues.instance.inventory);
         GameValues.instance.removeItem(requiredColor.name,requiredColor.number,GameValues.instance.inventory);
@@ -326,8 +337,13 @@ public class scriptMenuLab : MonoBehaviour
         checkForRessources();
         checkForSplice();
         GameValues.instance.updateScore(1);
-        SoundPlayer.instance.PlaySFX(spliceFx,2);
+        //SoundPlayer.instance.PlaySFX(spliceFx,2);
+
+        //spinnerObject = Instantiate(spinner, image.transform.position, Quaternion.identity, canvas.transform);
+        //animator.SetTrigger("Splice");
         
+
+
         adjustScore();
     }
     
