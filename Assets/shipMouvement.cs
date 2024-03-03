@@ -14,6 +14,7 @@ public class shipMouvement : MonoBehaviour
     private BoxCollider2D bc;
     private SpriteRenderer sprite;
     public GameObject projectilePrefab;
+    private bool boxUp = true;
     private int cooldown = 0;
     private int cooldownBC = 0;
     public int vie;
@@ -72,11 +73,13 @@ public class shipMouvement : MonoBehaviour
             throwProjectile();
         }
 
-        if (cooldownBC == 0 && bc.enabled == false)
+        if (cooldownBC == 0 && !boxUp)
         {
-            bc.enabled = true;
+            //bc.enabled = true;
+            boxUp = true;
+
         }
-        else if (bc.enabled == false)
+        else if (!boxUp)
         {
             cooldownBC--;
         }
@@ -113,11 +116,14 @@ public class shipMouvement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D colision)
     {
         Debug.Log("debut");
-        if (colision.collider.CompareTag("asteroid") && bc.enabled == true)
+        //if (colision.collider.CompareTag("asteroid") && bc.enabled == true)
+        if (colision.collider.CompareTag("asteroid") && boxUp)
         {
             Debug.Log(vie);
             vie--; //ne pas oublier de le remettre
-            bc.enabled = false;
+            //bc.enabled = false;
+            //bc.excludeLayers = 9;
+            boxUp = false;
             cooldownBC = 500;
             startBlinking = true;
             Debug.Log(vie);
