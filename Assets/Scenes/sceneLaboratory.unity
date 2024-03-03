@@ -2022,6 +2022,12 @@ MonoBehaviour:
   image: {fileID: 638187968}
   imagesAnimaux:
   - {fileID: 21300000, guid: 6eeb30f3475a57b48b96211dc7ed3c7a, type: 3}
+  - {fileID: 21300000, guid: 925e38604d2c75742b06a732be6e5568, type: 3}
+  - {fileID: 21300000, guid: 3c79857119cdad14aa682522b23aa8d9, type: 3}
+  - {fileID: 21300000, guid: 5063350768c395546a31efa40e273d74, type: 3}
+  - {fileID: 21300000, guid: 4885a6d97a50e4c4e9b9312161fbdddd, type: 3}
+  - {fileID: 21300000, guid: 2ab7190106539c048b2619f82f254825, type: 3}
+  - {fileID: 21300000, guid: 05d42de8953ec6945bcd9bc70187f579, type: 3}
   colorAdd: {fileID: 555175860}
   shapeAdd: {fileID: 1815735106}
   motifAdd: {fileID: 295801404}
