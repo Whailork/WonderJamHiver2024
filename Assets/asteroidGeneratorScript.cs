@@ -149,7 +149,7 @@ public class asteroidGeneratorScript : MonoBehaviour
                 return new Vector3((float)(random.Next(0, (int)width)) - width / 2, height/2, 0);
 
             case (1):
-                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);à
+                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);ï¿½
                 Debug.Log("droite");
                 return new Vector3(width/2, (float)(random.Next(0, (int)height) - height / 2), 0);
 
@@ -166,20 +166,38 @@ public class asteroidGeneratorScript : MonoBehaviour
         }
     }
 
+    int nbRndAsteroide()
+    {
+        Random random = new Random();
+        int nbRnd = random.Next(0, 200);
+        switch (nbRnd)
+        {
+            case > 0 and <= 59:
+                return 4;   // rouge - pois - cercle
+            case > 59 and <= 119:
+                return 1;   // jaune - pois - triangle
+            case > 119 and <= 144:
+                return 3;   // orange - carreau - pentagone
+            case > 144 and <= 169:
+                return 2;   // mauve - carreau = losange
+            case > 169 and <= 184:
+                return 5;   // vert - ligne - hexagone
+            default: // case > 184 and <= 199:
+                return 0;   // bleu - vague - carrÃ©
+        }
+    }
+
     public void generateAsteroid()
     {
         
         
         if (RunManager.enemiesLeft != 0)
         {
-            Random random = new Random();
-            int nbRnd = random.Next(0, 6);
-                
             Vector3 position = generatePosition();
             GameObject newAsteroid = Instantiate(asteroid, position,Quaternion.identity);
             newAsteroid.layer = 3;
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
-            myAsteroide.createAsteroid(nbRnd);
+            myAsteroide.createAsteroid(nbRndAsteroide());
             myAsteroide.setPosition(position);
             myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
             RunManager.enemiesLeft--;
