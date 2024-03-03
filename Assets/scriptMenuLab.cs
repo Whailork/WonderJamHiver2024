@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using System.Net.Mime;
 using TMPro;
 using UnityEngine.UI;
 
@@ -31,7 +31,15 @@ public class scriptMenuLab : MonoBehaviour
     public GameObject colorPlaceOlder;
     public GameObject shapePlaceOlder;
     public GameObject motifPlaceOlder;
-
+    
+    // nb d'items required de chaque
+    public GameObject nbTexteCouleur;
+    public GameObject nbTexteMotif;
+    public GameObject nbTexteForme;
+    
+    public GameObject scoreText;
+    public GameObject backGroundScoreText;
+    
     private bool colorPlaced = false;
     private bool shapePlaced = false;
     private bool motifPlaced = false;
@@ -47,6 +55,7 @@ public class scriptMenuLab : MonoBehaviour
         //tagAnimal.GetComponent<TagAnimal>();
         //tagAnimal.text = "oui";
         choose(choice);
+        adjustScore();
     }
 
     // Update is called once per frame
@@ -84,6 +93,9 @@ public class scriptMenuLab : MonoBehaviour
             choice = numberMaxAnimals-1;
         }
         choose(choice);
+        
+        //GameValues.instance.updateScore(1);
+        //adjustScore(); // A ENLEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     public void choose(int choice)
@@ -159,7 +171,34 @@ public class scriptMenuLab : MonoBehaviour
                 motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[3];
                 break;
         }
+
+        changeNumbers(choice);
         checkForRessources();
+    }
+
+    private void changeNumbers(int choice)
+    {
+        List<Combinaison> animalRecette = GameValues.instance.recettesAnimaux;
+        nbTexteCouleur.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredColor.number.ToString();
+        nbTexteMotif.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredMotif.number.ToString();
+        nbTexteForme.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredShape.number.ToString();
+    }
+
+    private void adjustScore()
+    {
+        int score = GameValues.instance.score;
+        scoreText.GetComponent<TextMeshProUGUI>().text = score.ToString();
+        
+        float widthScore = scoreText.GetComponent<RectTransform>().sizeDelta.x + 140;
+        float widthString = scoreText.GetComponent<TextMeshProUGUI>().GetPreferredValues().x;
+        
+        //Resize scoreTest
+        RectTransform rectTransformNb = scoreText.GetComponent<RectTransform>();
+        rectTransformNb.sizeDelta = new Vector2(widthString, rectTransformNb.sizeDelta.y);
+        
+        // Resize background
+        RectTransform rectTransformBackground = backGroundScoreText.GetComponent<RectTransform>();
+        rectTransformBackground.sizeDelta = new Vector2(widthScore, rectTransformBackground.sizeDelta.y);
     }
 
     private void checkForRessources()
@@ -241,7 +280,6 @@ public class scriptMenuLab : MonoBehaviour
         motifAdd.GetComponent<Button>().enabled = false;
         motifPlaced = true;
         checkForSplice();
-
     }
 
     private void checkForSplice()
@@ -279,6 +317,8 @@ public class scriptMenuLab : MonoBehaviour
         checkForRessources();
         checkForSplice();
         GameValues.instance.updateScore(1);
+        
+        adjustScore();
     }
     
 
