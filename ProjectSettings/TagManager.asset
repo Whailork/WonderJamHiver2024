@@ -14,11 +14,11 @@ TagManager:
   - Water
   - UI
   - starship
-  - Alert
-  - AlerElements
+  - 
+  - 
   - asteroid
-  - 
-  - 
+  - Alert
+  - AlertElements
   - 
   - 
   - 
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: AlertUI
+    uniqueID: 495989485
     locked: 0

@@ -137,6 +137,8 @@ public class shipMouvement : MonoBehaviour
                 //SceneManager.LoadScene("sceneLaboratory");
 
                 //alertMort.setActive(true);
+                RunManager.enemiesLeft = 0;
+                RunManager.endGeneration = true;
                 runManager.askAfterDead();
 
                 RunManager.currentRun = 0;
