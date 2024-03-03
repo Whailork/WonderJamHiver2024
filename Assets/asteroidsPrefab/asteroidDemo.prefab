@@ -181,3 +181,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cbad49cc59def254d8c9aa4c906b4d94, type: 3}
   - {fileID: 21300000, guid: 7280c8c5ade635f41ad1ea5506ca69e2, type: 3}
   - {fileID: 21300000, guid: 80d995a31f9030c4e9955a77ee8a8615, type: 3}
+  adnColors:
+  - {fileID: 21300000, guid: cba5a272b76af5e41a27a02e5f6ae878, type: 3}
+  - {fileID: 21300000, guid: bf6cec5272408a8419a35ab26cc1ed51, type: 3}
+  - {fileID: 21300000, guid: c0910ccd288f9754baa4773735a31790, type: 3}
+  - {fileID: 21300000, guid: 9c8a5f5a7bf245d40a28bcea2f3a198e, type: 3}
+  - {fileID: 21300000, guid: 441c71fd662580a4ab65c2dd0f82e44e, type: 3}
+  - {fileID: 21300000, guid: 9262791a0a4dde4429c1c52ecdf21487, type: 3}
