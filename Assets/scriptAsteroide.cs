@@ -189,7 +189,7 @@ public class scriptAsteroide : MonoBehaviour
     public void afficheLoot(string loot)
     {
         // Image invisible
-        adnImage.GetComponent<Image>().image = adnColors[6].texture;
+        //adnImage.GetComponent<Image>().sprite = adnColors[6];
         
         switch (loot)
         {
