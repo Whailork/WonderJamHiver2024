@@ -126,25 +126,14 @@ public class shipMouvement : MonoBehaviour
        
         if (colision.collider.CompareTag("asteroid") && boxUp)
         {
-            SoundPlayer.instance.PlaySFX(onHitFx,3);
+            SoundPlayer.instance.PlaySFX(onHitFx, 3);
             vie--;
-            //bc.enabled = false;
-            //bc.excludeLayers = 9;
+           
             boxUp = false;
             cooldownBC = 90;
             startBlinking = true;
            
-            /*if (vie == 2)
-            {
-                Barre3.enabled = false;
-            }
-
-            else if (vie == 1)
-            {
-                Barre2.enabled = false;
-            }*/
-
-            //else if (vie <= 0)
+           
             if (vie <= 0)
             {
                 //SceneManager.LoadScene("sceneLaboratory");
@@ -158,6 +147,7 @@ public class shipMouvement : MonoBehaviour
                 RunManager.roundNumber = 1;
                 Destroy(this.gameObject);
             }
+            //SoundPlayer.instance.PlaySFX(onHitFx, 3);
 
         }
     }
