@@ -189,7 +189,7 @@ public class scriptMenuLab : MonoBehaviour
         int score = GameValues.instance.score;
         scoreText.GetComponent<TextMeshProUGUI>().text = score.ToString();
         
-        float widthScore = scoreText.GetComponent<RectTransform>().sizeDelta.x + 125;
+        float widthScore = scoreText.GetComponent<RectTransform>().sizeDelta.x + 140;
         float widthString = scoreText.GetComponent<TextMeshProUGUI>().GetPreferredValues().x;
         
         //Resize scoreTest
@@ -199,8 +199,6 @@ public class scriptMenuLab : MonoBehaviour
         // Resize background
         RectTransform rectTransformBackground = backGroundScoreText.GetComponent<RectTransform>();
         rectTransformBackground.sizeDelta = new Vector2(widthScore, rectTransformBackground.sizeDelta.y);
-        
-        //rectTransformBackground.position = new Vector2(400f, 7f);
     }
 
     private void checkForRessources()
