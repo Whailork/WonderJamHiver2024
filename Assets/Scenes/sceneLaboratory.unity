@@ -2826,6 +2826,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ddc1344370224924fabc6abb3b70d18e, type: 3}
   - {fileID: 21300000, guid: e039cc8829a3e404293635a34646e61b, type: 3}
   - {fileID: 21300000, guid: 25de5dc0129b1b145bb19c41c7abc2ab, type: 3}
+  - {fileID: 21300000, guid: 750989e11585c2f42aa1850e66abaa88, type: 3}
   - {fileID: 21300000, guid: d701a37f31f85564698015e0befe6945, type: 3}
   - {fileID: 21300000, guid: cda65738c86106e4aae447f601eeee10, type: 3}
   - {fileID: 21300000, guid: 3c79857119cdad14aa682522b23aa8d9, type: 3}
@@ -2837,6 +2838,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fd579b88e5a08f6448e7774057284e54, type: 3}
   - {fileID: 21300000, guid: 3fc397feb49d2bf459d180a6005cc5e7, type: 3}
   - {fileID: 21300000, guid: f279aab0d0640584fb08a9163b89847c, type: 3}
+  - {fileID: 21300000, guid: 651fb3d4d59a9b14ba4c211449d0f6ac, type: 3}
   - {fileID: 21300000, guid: 86f518325147dcb48947990d6543e948, type: 3}
   - {fileID: 21300000, guid: 93c4298f5e0a8a6449cdf9cfb19917b2, type: 3}
   - {fileID: 21300000, guid: 2ab7190106539c048b2619f82f254825, type: 3}
@@ -2852,7 +2854,7 @@ MonoBehaviour:
   nbTexteMotif: {fileID: 613984084}
   nbTexteForme: {fileID: 98432880}
   scoreText: {fileID: 798869772}
-  backGroundScoreText: {fileID: 0}
+  backGroundScoreText: {fileID: 1017737789}
   arraySprite:
   - {fileID: 21300000, guid: 9257a4821c8435b4ba2fe4a8a5699239, type: 3}
   - {fileID: 21300000, guid: 5aeed1aeda9b96d40b6f64d4a3440fe7, type: 3}
