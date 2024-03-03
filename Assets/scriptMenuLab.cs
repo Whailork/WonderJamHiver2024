@@ -31,6 +31,9 @@ public class scriptMenuLab : MonoBehaviour
     public GameObject colorPlaceOlder;
     public GameObject shapePlaceOlder;
     public GameObject motifPlaceOlder;
+    public GameObject nbTexteCouleur;
+    public GameObject nbTexteMotif;
+    public GameObject nbTexteForme;
 
     private bool colorPlaced = false;
     private bool shapePlaced = false;
@@ -84,6 +87,7 @@ public class scriptMenuLab : MonoBehaviour
             choice = numberMaxAnimals-1;
         }
         choose(choice);
+        
     }
 
     public void choose(int choice)
@@ -159,7 +163,21 @@ public class scriptMenuLab : MonoBehaviour
                 motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[3];
                 break;
         }
+
+        changeNumbers(choice);
         checkForRessources();
+    }
+
+    private void changeNumbers(int choice)
+    {
+        List<Combinaison> animalRecette = GameValues.instance.recettesAnimaux;
+        nbTexteCouleur.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredColor.number.ToString();
+        nbTexteMotif.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredMotif.number.ToString();
+        nbTexteForme.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredShape.number.ToString();
+
+        nbTexteCouleur.GetComponent<TextMeshProUGUI>().faceColor = Color.red;
+        nbTexteCouleur.GetComponent<TextMeshProUGUI>().outlineColor = Color.white;
+        TextMeshPro m_TextMeshPro = GetComponent<TextMeshPro>() ?? gameObject.AddComponent<TextMeshPro>();
     }
 
     private void checkForRessources()
@@ -241,7 +259,6 @@ public class scriptMenuLab : MonoBehaviour
         motifAdd.GetComponent<Button>().enabled = false;
         motifPlaced = true;
         checkForSplice();
-
     }
 
     private void checkForSplice()
