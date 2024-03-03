@@ -166,20 +166,38 @@ public class asteroidGeneratorScript : MonoBehaviour
         }
     }
 
+    int nbRndAsteroide()
+    {
+        Random random = new Random();
+        int nbRnd = random.Next(0, 20);
+        switch (nbRnd)
+        {
+            case > 0 and <= 11:
+                return 4;   // rouge - pois - cercle
+            case > 11 and <= 23:
+                return 1;   // jaune - pois - triangle
+            case > 23 and <= 28:
+                return 3;   // orange - carreau - pentagone
+            case > 28 and <= 33:
+                return 2;   // mauve - carreau = losange
+            case > 33 and <= 36:
+                return 5;   // vert - ligne - hexagone
+            default: // case > 36 and <= 39:
+                return 0;   // bleu - vague - carré
+        }
+    }
+
     public void generateAsteroid()
     {
         
         
         if (RunManager.enemiesLeft != 0)
         {
-            Random random = new Random();
-            int nbRnd = random.Next(0, 6);
-                
             Vector3 position = generatePosition();
             GameObject newAsteroid = Instantiate(asteroid, position,Quaternion.identity);
             newAsteroid.layer = 3;
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
-            myAsteroide.createAsteroid(nbRnd);
+            myAsteroide.createAsteroid(nbRndAsteroide());
             myAsteroide.setPosition(position);
             myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
             RunManager.enemiesLeft--;
