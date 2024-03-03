@@ -22,6 +22,9 @@ public class scriptMenuLab : MonoBehaviour
     private Ressource requiredMotif;
     public GameObject image;
     public Sprite[] imagesAnimaux;
+    public AudioClip clickBtnFx;
+    public AudioClip spliceFx;
+    public AudioClip addBtnFx;
     
     public GameObject colorAdd;
     public GameObject shapeAdd;
@@ -43,6 +46,7 @@ public class scriptMenuLab : MonoBehaviour
     private bool colorPlaced = false;
     private bool shapePlaced = false;
     private bool motifPlaced = false;
+   
     public Sprite[] arraySprite;
 
     public Sprite[] arrayMotif;
@@ -80,6 +84,7 @@ public class scriptMenuLab : MonoBehaviour
             choice = 0;
         }
         choose(choice);
+        SoundPlayer.instance.PlaySFX(clickBtnFx,2);
     }
 
     public void counterDown()
@@ -93,6 +98,7 @@ public class scriptMenuLab : MonoBehaviour
             choice = numberMaxAnimals-1;
         }
         choose(choice);
+        SoundPlayer.instance.PlaySFX(clickBtnFx,2);
         
         //GameValues.instance.updateScore(1);
         //adjustScore(); // A ENLEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -263,6 +269,7 @@ public class scriptMenuLab : MonoBehaviour
         colorAdd.GetComponent<Image>().color = Color.gray;
         colorAdd.GetComponent<Button>().enabled = false;
         colorPlaced = true;
+        SoundPlayer.instance.PlaySFX(addBtnFx,2);
         checkForSplice();
     }
     public void shapeAddClicked()
@@ -271,6 +278,7 @@ public class scriptMenuLab : MonoBehaviour
         shapeAdd.GetComponent<Image>().color = Color.gray;
         shapeAdd.GetComponent<Button>().enabled = false;
         shapePlaced = true;
+        SoundPlayer.instance.PlaySFX(addBtnFx,2);
         checkForSplice();
     }
     public void motifAddClicked()
@@ -279,6 +287,7 @@ public class scriptMenuLab : MonoBehaviour
         motifAdd.GetComponent<Image>().color = Color.gray;
         motifAdd.GetComponent<Button>().enabled = false;
         motifPlaced = true;
+        SoundPlayer.instance.PlaySFX(addBtnFx,2);
         checkForSplice();
     }
 
@@ -317,6 +326,7 @@ public class scriptMenuLab : MonoBehaviour
         checkForRessources();
         checkForSplice();
         GameValues.instance.updateScore(1);
+        SoundPlayer.instance.PlaySFX(spliceFx,2);
         
         adjustScore();
     }

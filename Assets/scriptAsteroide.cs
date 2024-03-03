@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 using System.Drawing;
+using System.Net.Mime;
 using UnityEngine.UIElements;
 using Color = System.Drawing.Color;
 using UnityEngineColor = UnityEngine.Color;
@@ -33,6 +34,12 @@ public class scriptAsteroide : MonoBehaviour
     //public Sprite[] spriteArray;
     
     public Sprite[] arrayAsteroides;
+    
+    public Sprite[] adnColors;
+
+    private Sprite imageADN;
+    
+    public GameObject adnImage;
     
     // Start is called before the first frame update
     void Start()
@@ -91,33 +98,33 @@ public class scriptAsteroide : MonoBehaviour
         {
             case 0 :
                 c = Color.Blue;
-                m = "vague";
-                f = "carree";
+                m = "Vague";
+                f = "Carree";
                 break;
             case 1 :
                 c = Color.Yellow;
-                m = "pois";
-                f = "triangle";
+                m = "Pois";
+                f = "Triangle";
                 break;
             case 2 :
                 c = Color.Purple;
-                m = "carreau";
-                f = "losange";
+                m = "Carreau";
+                f = "Losange";
                 break;
             case 3 :
                 c = Color.Orange;
-                m = "carreau";
-                f = "pentagone";
+                m = "Carreau";
+                f = "Pentagone";
                 break;
             case 4 :
                 c = Color.Red;
-                m = "pois";
-                f = "cercle";
+                m = "Pois";
+                f = "Cercle";
                 break;
             case 5 :
                 c = Color.Green;
-                m = "ligne";
-                f = "hexagone";
+                m = "Ligne";
+                f = "Hexagone";
                 break;
         } 
         
@@ -155,6 +162,8 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + color.Name);
             GameValues.instance.addItem(color.Name,1, GameValues.instance.currentRunInventory);
+
+            afficheLoot(color.Name);
         }
         Random randomf = new Random();
         int formeRnd = randomf.Next(0, 100);
@@ -162,6 +171,8 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + form);
             GameValues.instance.addItem(form,1,GameValues.instance.currentRunInventory);
+            
+            afficheLoot(form);
         }
         Random randomM = new Random();
         int motifRnd = randomM.Next(0, 100);
@@ -169,8 +180,38 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + motif);
             GameValues.instance.addItem(motif,1,GameValues.instance.currentRunInventory);
+            
+            afficheLoot(motif);
         }
 
+    }
+
+    public void afficheLoot(string loot)
+    {
+        // Image invisible
+        adnImage.GetComponent<Image>().image = adnColors[6].texture;
+        
+        switch (loot)
+        {
+            case "Red":
+                adnImage.GetComponent<Image>().image = adnColors[0].texture;
+                break;
+            case "Orange":
+                adnImage.GetComponent<Image>().image = adnColors[1].texture;
+                break;
+            case "Yellow":
+                adnImage.GetComponent<Image>().image = adnColors[2].texture;
+                break;
+            case "Green":
+                adnImage.GetComponent<Image>().image = adnColors[3].texture;
+                break;
+            case "Blue":
+                adnImage.GetComponent<Image>().image = adnColors[4].texture;
+                break;
+            case "Purple":
+                adnImage.GetComponent<Image>().image = adnColors[5].texture;
+                break;
+        }
     }
     public void takeDamage()
     {

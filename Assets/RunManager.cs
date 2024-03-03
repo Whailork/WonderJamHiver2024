@@ -30,6 +30,7 @@ public class RunManager : MonoBehaviour
 
     public static void newRun()
     {
+        endGeneration = false;
         currentRun++;
         if (currentRun == 1)
         {
