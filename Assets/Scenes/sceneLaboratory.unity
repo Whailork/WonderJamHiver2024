@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -80, y: -76.656494}
-  m_SizeDelta: {x: 160, y: 153.313}
+  m_AnchoredPosition: {x: -140.823, y: -142.769}
+  m_SizeDelta: {x: 281.646, y: 285.537}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134307958
 MonoBehaviour:
@@ -1053,7 +1053,7 @@ RectTransform:
   m_GameObject: {fileID: 528143910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7375, y: 1.9875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 47698736}
@@ -1064,8 +1064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038146973, y: -14.041}
-  m_SizeDelta: {x: 276.301, y: 418.418}
+  m_AnchoredPosition: {x: -0.000006198883, y: -0.00000667572}
+  m_SizeDelta: {x: 266.1707, y: 328.2585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528143912
 MonoBehaviour:
@@ -1627,7 +1627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000012398, y: -19.476997}
+  m_AnchoredPosition: {x: -0.000012398, y: -19.47699}
   m_SizeDelta: {x: 160, y: 38.953}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680531041
@@ -1963,7 +1963,7 @@ RectTransform:
   m_GameObject: {fileID: 816483003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.100592, y: 2.2173634, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1353789676}
@@ -2609,7 +2609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -178.056, y: 18.654999}
+  m_AnchoredPosition: {x: -178.05603, y: 18.65503}
   m_SizeDelta: {x: 356.112, y: 37.311}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017737791
@@ -2819,12 +2819,28 @@ MonoBehaviour:
   image: {fileID: 638187968}
   imagesAnimaux:
   - {fileID: 21300000, guid: 6eeb30f3475a57b48b96211dc7ed3c7a, type: 3}
+  - {fileID: 21300000, guid: a4650f411ee89b44a86451830d603333, type: 3}
   - {fileID: 21300000, guid: 925e38604d2c75742b06a732be6e5568, type: 3}
+  - {fileID: 21300000, guid: c455f9ebca481bc45a0a5d86e79a1f8a, type: 3}
+  - {fileID: 21300000, guid: 67543a8d8447a83459117bf19b617765, type: 3}
+  - {fileID: 21300000, guid: ddc1344370224924fabc6abb3b70d18e, type: 3}
+  - {fileID: 21300000, guid: e039cc8829a3e404293635a34646e61b, type: 3}
+  - {fileID: 21300000, guid: 25de5dc0129b1b145bb19c41c7abc2ab, type: 3}
+  - {fileID: 21300000, guid: d701a37f31f85564698015e0befe6945, type: 3}
+  - {fileID: 21300000, guid: cda65738c86106e4aae447f601eeee10, type: 3}
   - {fileID: 21300000, guid: 3c79857119cdad14aa682522b23aa8d9, type: 3}
   - {fileID: 21300000, guid: 5063350768c395546a31efa40e273d74, type: 3}
   - {fileID: 21300000, guid: 4885a6d97a50e4c4e9b9312161fbdddd, type: 3}
+  - {fileID: 21300000, guid: 9b8a807b1a1a26e478f66a4f5dfedc43, type: 3}
+  - {fileID: 21300000, guid: d4957e11b1e520e41ab8bed0c9743c42, type: 3}
+  - {fileID: 21300000, guid: cfaff4f59b241ac4fb0c08397267c2eb, type: 3}
+  - {fileID: 21300000, guid: fd579b88e5a08f6448e7774057284e54, type: 3}
+  - {fileID: 21300000, guid: 3fc397feb49d2bf459d180a6005cc5e7, type: 3}
+  - {fileID: 21300000, guid: f279aab0d0640584fb08a9163b89847c, type: 3}
+  - {fileID: 21300000, guid: 86f518325147dcb48947990d6543e948, type: 3}
+  - {fileID: 21300000, guid: 93c4298f5e0a8a6449cdf9cfb19917b2, type: 3}
   - {fileID: 21300000, guid: 2ab7190106539c048b2619f82f254825, type: 3}
-  - {fileID: 21300000, guid: 05d42de8953ec6945bcd9bc70187f579, type: 3}
+  - {fileID: 21300000, guid: e5178e1ae0d517f4eb5ef65d140f78b9, type: 3}
   colorAdd: {fileID: 555175860}
   shapeAdd: {fileID: 1815735106}
   motifAdd: {fileID: 295801404}
@@ -2919,10 +2935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
