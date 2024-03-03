@@ -74,7 +74,6 @@ public class asteroidGeneratorScript : MonoBehaviour
                 break;
             case > 24 and <= 49:
                 return 1;
-                // color = Color.orange;
                 //setColor(Color.Orange);
                 break;
             default:
@@ -137,13 +136,14 @@ public class asteroidGeneratorScript : MonoBehaviour
         
         if (RunManager.enemiesLeft != 0)
         {
+            Random random = new Random();
+            int nbRnd = random.Next(0, 6);
+            
             GameObject newAsteroid = Instantiate(asteroid, new Vector3(0, 0, 0),Quaternion.identity);
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
-            myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+            myAsteroide.createAsteroid(nbRnd);
             RunManager.enemiesLeft--;
         }
-        
-        
     }
     
     // Update is called once per frame

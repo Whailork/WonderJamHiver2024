@@ -171,6 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c777ce42eb0df549a83b19491e72cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pattern: 
+  speed: 5
   vie: 1
   spriteArray:
   - {fileID: 7482667652216324306, guid: 232cf5fcb62e93f459453841b8c6e645, type: 3}
@@ -179,6 +181,13 @@ MonoBehaviour:
   - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
   - {fileID: 2747690628134850419, guid: 34aa040a56b39b443ba0177015362570, type: 3}
   - {fileID: -2413806693520163455, guid: 5ec18b9cd59913346b2b9e8170d8bda2, type: 3}
+  arrayAsteroides:
+  - {fileID: 21300000, guid: c73d463db62129c4f87dbaad1b0128b1, type: 3}
+  - {fileID: 21300000, guid: 59333c227d7cf1246b14ab99090c3254, type: 3}
+  - {fileID: 21300000, guid: f1b4c33c171d40c4d84f672a0af1b917, type: 3}
+  - {fileID: 21300000, guid: cbad49cc59def254d8c9aa4c906b4d94, type: 3}
+  - {fileID: 21300000, guid: 7280c8c5ade635f41ad1ea5506ca69e2, type: 3}
+  - {fileID: 21300000, guid: 80d995a31f9030c4e9955a77ee8a8615, type: 3}
   motifArray:
   - {fileID: 21300000, guid: ec05601b980f45d489d6681c43056d6a, type: 3}
   - {fileID: 21300000, guid: 5d012aed1e0a19b4eae1d01023de9341, type: 3}
