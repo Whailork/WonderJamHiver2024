@@ -147,18 +147,20 @@ public class asteroidGeneratorScript : MonoBehaviour
         {
             case (0):
                 //return new Vector3((float)(random.Next(-width / 2, width / 2)), height, 0f);
-                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, height, 0);
+                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, height/2, 0);
 
             case (1):
-                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);
-                return new Vector3(width, (float)(random.Next(0, (int)height) - height / 2), 0);
+                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);à
+                Debug.Log("droite");
+                return new Vector3(width/2, (float)(random.Next(0, (int)height) - height / 2), 0);
 
             case (2):
                 // return new Vector3((float)(random.Next(-width / 2, width / 2)), -height, 0f);
-                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, -height, 0);
+                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, -height/2, 0);
 
             case (3):
-                return new Vector3(-width, (float)(random.Next(0, (int)height)) - height / 2, 0);
+                Debug.Log("gauche");
+                return new Vector3(-width/2, (float)(random.Next(0, (int)height)) - height / 2, 0);
             
             default:
                 return new Vector3(0,0,0);
