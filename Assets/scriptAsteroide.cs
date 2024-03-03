@@ -35,6 +35,8 @@ public class scriptAsteroide : MonoBehaviour
     public Sprite[] arrayAsteroides;
     
     public Sprite[] adnColors;
+
+    private Script imageADN;
     
     // Start is called before the first frame update
     void Start()
