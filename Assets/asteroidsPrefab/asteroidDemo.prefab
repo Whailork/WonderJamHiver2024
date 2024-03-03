@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6925315997414838858}
   - component: {fileID: 6264361806260338174}
   - component: {fileID: 6006878433709297599}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: asteroidDemo
   m_TagString: asteroid
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

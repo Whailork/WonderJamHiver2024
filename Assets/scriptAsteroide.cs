@@ -159,7 +159,7 @@ public class scriptAsteroide : MonoBehaviour
                 pattern = "sinus";
                 break;
             case (2):
-                Debug.Log("para");
+                
                 pattern = "parabol";
                 break;
 
