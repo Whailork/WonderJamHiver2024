@@ -12,6 +12,21 @@ public class ressourceIconScript : MonoBehaviour
     public bool currentRun;
     void Start()
     {
+        /*
+        if (currentRun)
+        {
+            nbRessource.text = GameValues.instance.getItem(ressourceName, GameValues.instance.currentRunInventory) + "";
+        }
+        else
+        {
+            nbRessource.text = GameValues.instance.getItem(ressourceName, GameValues.instance.inventory) + "";
+        }*/
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (currentRun)
         {
             nbRessource.text = GameValues.instance.getItem(ressourceName, GameValues.instance.currentRunInventory) + "";
@@ -20,12 +35,5 @@ public class ressourceIconScript : MonoBehaviour
         {
             nbRessource.text = GameValues.instance.getItem(ressourceName, GameValues.instance.inventory) + "";
         }
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
