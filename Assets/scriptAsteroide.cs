@@ -24,6 +24,10 @@ public class scriptAsteroide : MonoBehaviour
 
     public float speed = 5f;
 
+    private Vector3 position;
+
+    private float rangeLimit;
+
     public int vie;
 
     //public Sprite[] spriteArray;
@@ -33,9 +37,6 @@ public class scriptAsteroide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Random random = new Random();
-        //direction = new Vector2((float)random.Next(0, 100) / 100, (float)random.Next(0, 100) / 100);
-        direction = new Vector2(0.866f, 0.5f);
         rb = GetComponent<Rigidbody2D>();
         setPattern();
     }
@@ -132,6 +133,13 @@ public class scriptAsteroide : MonoBehaviour
     void Update()
     {
         updatePattern();
+        position = transform.position;
+        if (outOfBound())
+        {
+            RunManager.enemiesLeft++;
+            Destroy(this.gameObject);
+        }
+
     }
 
     private void dropLoot()
@@ -171,7 +179,25 @@ public class scriptAsteroide : MonoBehaviour
 
     public void setPattern()
     {
-        pattern = "parabol";
+        direction = new Vector2(-position.x, -position.y);
+
+        Random random = new Random();
+        int rnd = random.Next(0, 3);
+
+        switch (rnd)
+        {
+            case (0):
+                pattern = "straight";
+                break;
+            case (1):
+                pattern = "sinus";
+                break;
+            case (2):
+                pattern = "parabol";
+                break;
+
+
+        }
     } 
     
     public void updatePattern()
@@ -187,7 +213,7 @@ public class scriptAsteroide : MonoBehaviour
             case ("sinus"):
              
                 //equation traveling wave https://labs.phys.utk.edu/mbreinig/phys221core/modules/m11/traveling_waves.html
-                rb.AddForce(new Vector2((float)direction.x, (float)(2.0f * Math.Cos(5.0f * (float)Time.time)) + (float)direction.y));
+                rb.AddForce(new Vector2((float)direction.x, (float)(20.0f * Math.Cos(5.0f * (float)Time.time)) + (float)direction.y));
               
                 rb.velocity = rb.velocity.normalized * speed;
                 break;
@@ -195,12 +221,28 @@ public class scriptAsteroide : MonoBehaviour
 
             case ("parabol"):
 
-                rb.AddForce(new Vector2((float)direction.x + 5f , ((float)(-1f * 3f * Time.time)) + 5f + (float)direction.y));
+                rb.AddForce(new Vector2((float)direction.x + 50f , ((float)(-1f * 10f * Time.time)) + 50f + (float)direction.y));
 
                 rb.velocity = rb.velocity.normalized * speed;
                 break;
         }
            
+    }
+
+    public void setPosition(Vector3 position)
+    {
+        this.position = position;
+    }
+
+
+    public void setRangeLimit(float limit)
+    {
+        this.rangeLimit = limit;
+    }
+
+    private bool outOfBound()
+    {
+        return position.magnitude > rangeLimit;
     }
 
 }
