@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSong: {fileID: 8300000, guid: 4e874550f5ed74d43b8a1549d43050d3, type: 3}
+  btnSound: {fileID: 8300000, guid: 2f408d7f9ba32a2448ed992f11c9e427, type: 3}
 --- !u!114 &134307959
 MonoBehaviour:
   m_ObjectHideFlags: 0

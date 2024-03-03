@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     public AudioClip nextSong;
+    public AudioClip btnSound;
     public void Play()
     {
         SceneManager.LoadScene("sceneLaboratory");
