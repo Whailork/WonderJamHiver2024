@@ -185,6 +185,15 @@ public class GameValues : MonoBehaviour
         {
             addItem(ressource.name,ressource.number,inventory);
         }
+        resetRunInventory();
+    }
+
+    public void resetRunInventory()
+    {
+        foreach (Ressource ressource in currentRunInventory)
+        {
+            ressource.number = 0;
+        }
     }
 
 }

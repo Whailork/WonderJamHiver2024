@@ -42,6 +42,7 @@ public class MenuButtons : MonoBehaviour
         RunManager.currentRun = 0;
 
         SceneManager.LoadScene("sceneLaboratory");
+        GameValues.instance.resetRunInventory();
         SoundPlayer.instance.SetMusic(nextSong, 1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }
