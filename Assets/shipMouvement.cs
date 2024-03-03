@@ -127,7 +127,7 @@ public class shipMouvement : MonoBehaviour
             cooldownBC = 500;
             startBlinking = true;
             Debug.Log(vie);
-            if (vie == 2)
+            /*if (vie == 2)
             {
                 Barre3.enabled = false;
             }
@@ -135,9 +135,10 @@ public class shipMouvement : MonoBehaviour
             else if (vie == 1)
             {
                 Barre2.enabled = false;
-            }
+            }*/
 
-            else if (vie <= 0)
+            //else if (vie <= 0)
+            if (vie <= 0)
             {
                 SceneManager.LoadScene("mainMenuScene");
                 //Barre3.enabled = true;
@@ -157,7 +158,18 @@ public class shipMouvement : MonoBehaviour
             startBlinking = false;
             spriteBlinkingTotalTimer = 0.0f;
             sprite.enabled = true;   // according to 
-                                                                             //your sprite
+
+            if (vie == 2)
+            {
+                Barre3.enabled = false;
+            }
+
+            else if (vie == 1)
+            {
+                Barre2.enabled = false;
+            }
+
+            //your sprite
             return;
         }
 
@@ -168,10 +180,30 @@ public class shipMouvement : MonoBehaviour
             if (sprite.enabled == true)
             {
                 sprite.enabled = false;  //make changes
+
+                if (vie == 2)
+                {
+                    Barre3.enabled = false;
+                }
+
+                else if (vie == 1)
+                {
+                    Barre2.enabled = false;
+                }
             }
             else
             {
                 sprite.enabled = true;   //make changes
+
+                if (vie == 2)
+                {
+                    Barre3.enabled = true;
+                }
+
+                else if (vie == 1)
+                {
+                    Barre2.enabled = true;
+                }
             }
         }
     }
