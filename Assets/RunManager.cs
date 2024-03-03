@@ -17,6 +17,7 @@ public class RunManager : MonoBehaviour
     public static int enemiesLive = 0;
     private bool alertShown = false;
     public GameObject canvas;
+    public static bool endGeneration = false;
 
     //public GameObject starship;
    

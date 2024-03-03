@@ -136,9 +136,13 @@ public class scriptAsteroide : MonoBehaviour
         position = transform.position;
         if (outOfBound())
         {
+            if (!RunManager.endGeneration)
+            {
+                RunManager.enemiesLeft++;
+            }
             RunManager.enemiesLive--;
-            RunManager.enemiesLeft++;
-            Destroy(this.gameObject);
+            
+           Destroy(this.gameObject);
         }
 
     }
