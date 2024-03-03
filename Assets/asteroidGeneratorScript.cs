@@ -81,7 +81,6 @@ public class asteroidGeneratorScript : MonoBehaviour
                 break;
             case > 24 and <= 49:
                 return 1;
-                // color = Color.orange;
                 //setColor(Color.Orange);
                 break;
             default:
@@ -180,8 +179,6 @@ public class asteroidGeneratorScript : MonoBehaviour
             myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
             RunManager.enemiesLeft--;
         }
-        
-        
     }
     
     // Update is called once per frame
