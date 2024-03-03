@@ -173,3 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 333342773992566370, guid: 10463c54febeb1e43889724d28dcb92f, type: 3}
   vie: 1
+  Barre1: {fileID: 0}
+  Barre2: {fileID: 0}
+  Barre3: {fileID: 0}
+  spriteBlinkingTimer: 0
+  spriteBlinkingMiniDuration: 1
+  spriteBlinkingTotalTimer: 0
+  spriteBlinkingTotalDuration: 90
+  startBlinking: 0
