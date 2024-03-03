@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using System.Net.Mime;
 using TMPro;
 using UnityEngine.UI;
 
@@ -55,6 +55,7 @@ public class scriptMenuLab : MonoBehaviour
         //tagAnimal.GetComponent<TagAnimal>();
         //tagAnimal.text = "oui";
         choose(choice);
+        adjustScore();
     }
 
     // Update is called once per frame
