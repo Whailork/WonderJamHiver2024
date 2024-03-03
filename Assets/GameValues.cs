@@ -135,7 +135,7 @@ public class GameValues : MonoBehaviour
         inventory.Add(new Ressource("Cercle","rare",0,true));
         //motifs
         inventory.Add(new Ressource("Ligne","common",0,true));
-        inventory.Add(new Ressource("Carreaute","common",0,true));
+        inventory.Add(new Ressource("Carreau","common",0,true));
         inventory.Add(new Ressource("Pois","common",0,true));
         inventory.Add(new Ressource("Vague","common",0,true));
         
