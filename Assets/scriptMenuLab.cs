@@ -98,7 +98,7 @@ public class scriptMenuLab : MonoBehaviour
             image.GetComponent<Image>().sprite = imagesAnimaux[choice];
         }
         
-        colorPlaceOlder.GetComponent<Image>().color = new Color(color.R, color.G, color.B);
+        colorPlaceOlder.GetComponent<Image>().color = new Color(color.R/255f, color.G/255f, color.B/255f);
         switch (requiredShape.name)
         {
             case "Triangle":
