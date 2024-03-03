@@ -20,6 +20,10 @@ public class shipMouvement : MonoBehaviour
     public Image Barre2;
     public Image Barre3;
     public RunManager runManager;
+
+    public AudioClip shootFx;
+    public AudioClip onHitFx;
+    public AudioClip shipmoveFx;
     //public GameObject alertMort;
 
 
@@ -54,6 +58,7 @@ public class shipMouvement : MonoBehaviour
         projectileScript controller = projectile.GetComponent<projectileScript>();
         controller.setDirection(new Vector2(10*Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad),10*Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
         controller.setRotation(transform.eulerAngles.z);
+        SoundPlayer.instance.PlaySFX(shootFx,2);
     }
 
     private void FixedUpdate()
@@ -76,7 +81,7 @@ public class shipMouvement : MonoBehaviour
         {
             // rb.AddForce(Vector2.up);
             rb.AddForce(new Vector2(6f * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad), 6f * Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
-
+            //SoundPlayer.instance.PlaySFX(shipmoveFx,1);
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -121,7 +126,7 @@ public class shipMouvement : MonoBehaviour
        
         if (colision.collider.CompareTag("asteroid") && boxUp)
         {
-     
+            SoundPlayer.instance.PlaySFX(onHitFx,3);
             vie--;
             //bc.enabled = false;
             //bc.excludeLayers = 9;
