@@ -191,7 +191,7 @@ public class asteroidGeneratorScript : MonoBehaviour
     {
         
         
-        if (RunManager.enemiesLeft != 0 && RunManager.enemiesLive < RunManager.enemiesTogether)
+        if (RunManager.enemiesLeft != 0 && RunManager.enemiesLive < RunManager.enemiesTogether && !RunManager.endGeneration)
         {
             Vector3 position = generatePosition();
             GameObject newAsteroid = Instantiate(asteroid, position,Quaternion.identity);

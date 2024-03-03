@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 186304612717627454}
   - component: {fileID: 3607113602160298222}
   - component: {fileID: 7083052469692187971}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: ContinuerBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 6003258983370676034}
   - component: {fileID: 9119756228368049671}
   - component: {fileID: 3714114885807685563}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 4304587951257734679}
   - component: {fileID: 2814786627892069864}
   - component: {fileID: 1069960916842344562}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 2794386359688062581}
   - component: {fileID: 7777522184310394441}
   - component: {fileID: 8633975641820200090}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: AlerteFinVague
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 6420295318167030284}
   - component: {fileID: 6387281038960127966}
   - component: {fileID: 3413037016987741479}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: EncaisserBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 7815411512512207251}
   - component: {fileID: 523916344712125520}
   - component: {fileID: 142532257197929656}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: encaisserTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,6 +949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ressourceNumberIconPurple Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1008827383267258360, guid: db46a656400f3014789d91450d65c0ed, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2181857833903739695, guid: db46a656400f3014789d91450d65c0ed, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1028,6 +1032,14 @@ PrefabInstance:
     - target: {fileID: 2181857833903739695, guid: db46a656400f3014789d91450d65c0ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743081895932018215, guid: db46a656400f3014789d91450d65c0ed, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898523197280919705, guid: db46a656400f3014789d91450d65c0ed, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1149,9 +1161,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7081615068836214378}
     m_Modifications:
+    - target: {fileID: 2765650780338067674, guid: 26bf6aa661aea69418ff99556e841cc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920556070297962084, guid: 26bf6aa661aea69418ff99556e841cc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7616515271466731781, guid: 26bf6aa661aea69418ff99556e841cc6, type: 3}
       propertyPath: m_Name
       value: ressourceNumberIconGreen Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616515271466731781, guid: 26bf6aa661aea69418ff99556e841cc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8787889849982285266, guid: 26bf6aa661aea69418ff99556e841cc6, type: 3}
       propertyPath: m_Pivot.x
@@ -1455,9 +1479,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7081615068836214378}
     m_Modifications:
+    - target: {fileID: 887544770253097387, guid: e799d418f211b5a43a24a4999aec2f60, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042449527997765397, guid: e799d418f211b5a43a24a4999aec2f60, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4864993390073796724, guid: e799d418f211b5a43a24a4999aec2f60, type: 3}
       propertyPath: m_Name
       value: ressourceNumberIconTriangle Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864993390073796724, guid: e799d418f211b5a43a24a4999aec2f60, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6036084354068800675, guid: e799d418f211b5a43a24a4999aec2f60, type: 3}
       propertyPath: m_Pivot.x
@@ -1557,6 +1593,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7081615068836214378}
     m_Modifications:
+    - target: {fileID: 2606400462884204286, guid: 2ab186826a68d174b9b051da24cfe7b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756784028798808128, guid: 2ab186826a68d174b9b051da24cfe7b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7761827316665720136, guid: 2ab186826a68d174b9b051da24cfe7b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1641,6 +1685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ressourceNumberIconBlue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8930668680948228511, guid: 2ab186826a68d174b9b051da24cfe7b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1659,9 +1707,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7081615068836214378}
     m_Modifications:
+    - target: {fileID: 192599741444417782, guid: 676e707e5af55c74a84afe2de3780cb7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343563849498490440, guid: 676e707e5af55c74a84afe2de3780cb7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5584072676662163753, guid: 676e707e5af55c74a84afe2de3780cb7, type: 3}
       propertyPath: m_Name
       value: ressourceNumberIconRed Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584072676662163753, guid: 676e707e5af55c74a84afe2de3780cb7, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6717413000812234238, guid: 676e707e5af55c74a84afe2de3780cb7, type: 3}
       propertyPath: m_Pivot.x
@@ -2071,6 +2131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ressourceNumberIconYellow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2558813536344999361, guid: 3de50e8d8c3f633488cd38140f11cbbe, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3730436595017758998, guid: 3de50e8d8c3f633488cd38140f11cbbe, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2150,6 +2214,14 @@ PrefabInstance:
     - target: {fileID: 3730436595017758998, guid: 3de50e8d8c3f633488cd38140f11cbbe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804852129386451998, guid: 3de50e8d8c3f633488cd38140f11cbbe, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960311590462048928, guid: 3de50e8d8c3f633488cd38140f11cbbe, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2456,6 +2528,18 @@ PrefabInstance:
     - target: {fileID: 4032605605735064947, guid: fc222eafff549204c8fd6361ab029f99, type: 3}
       propertyPath: m_Name
       value: ressourceNumberIconOrange Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032605605735064947, guid: fc222eafff549204c8fd6361ab029f99, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506763762474822162, guid: fc222eafff549204c8fd6361ab029f99, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657164902808401068, guid: fc222eafff549204c8fd6361ab029f99, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
