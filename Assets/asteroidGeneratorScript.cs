@@ -170,11 +170,14 @@ public class asteroidGeneratorScript : MonoBehaviour
         
         if (RunManager.enemiesLeft != 0)
         {
+            Random random = new Random();
+            int nbRnd = random.Next(0, 6);
+                
             Vector3 position = generatePosition();
             GameObject newAsteroid = Instantiate(asteroid, position,Quaternion.identity);
             newAsteroid.layer = 3;
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
-            myAsteroide.createAsteroid(assignColor(), assignMotif(), assignForm());
+            myAsteroide.createAsteroid(nbRnd);
             myAsteroide.setPosition(position);
             myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
             RunManager.enemiesLeft--;
