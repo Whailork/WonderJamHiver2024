@@ -95,33 +95,33 @@ public class scriptAsteroide : MonoBehaviour
         {
             case 0 :
                 c = Color.Blue;
-                m = "vague";
-                f = "carree";
+                m = "Vague";
+                f = "Carree";
                 break;
             case 1 :
                 c = Color.Yellow;
-                m = "pois";
-                f = "triangle";
+                m = "Pois";
+                f = "Triangle";
                 break;
             case 2 :
                 c = Color.Purple;
-                m = "carreau";
-                f = "losange";
+                m = "Carreau";
+                f = "Losange";
                 break;
             case 3 :
                 c = Color.Orange;
-                m = "carreau";
-                f = "pentagone";
+                m = "Carreau";
+                f = "Pentagone";
                 break;
             case 4 :
                 c = Color.Red;
-                m = "pois";
-                f = "cercle";
+                m = "Pois";
+                f = "Cercle";
                 break;
             case 5 :
                 c = Color.Green;
-                m = "ligne";
-                f = "hexagone";
+                m = "Ligne";
+                f = "Hexagone";
                 break;
         } 
         
