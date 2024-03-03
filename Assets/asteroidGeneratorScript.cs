@@ -150,7 +150,7 @@ public class asteroidGeneratorScript : MonoBehaviour
 
             case (1):
                 //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);�
-                Debug.Log("droite");
+              
                 return new Vector3(width/2, (float)(random.Next(0, (int)height) - height / 2), 0);
 
             case (2):
@@ -158,7 +158,7 @@ public class asteroidGeneratorScript : MonoBehaviour
                 return new Vector3((float)(random.Next(0, (int)width)) - width / 2, -height/2, 0);
 
             case (3):
-                Debug.Log("gauche");
+            
                 return new Vector3(-width/2, (float)(random.Next(0, (int)height)) - height / 2, 0);
             
             default:
@@ -191,15 +191,16 @@ public class asteroidGeneratorScript : MonoBehaviour
     {
         
         
-        if (RunManager.enemiesLeft != 0)
+        if (RunManager.enemiesLeft != 0 && RunManager.enemiesLive < RunManager.enemiesTogether)
         {
             Vector3 position = generatePosition();
             GameObject newAsteroid = Instantiate(asteroid, position,Quaternion.identity);
-            newAsteroid.layer = 3;
+            newAsteroid.layer = 9;
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
             myAsteroide.createAsteroid(nbRndAsteroide());
             myAsteroide.setPosition(position);
             myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
+            RunManager.enemiesLive++;
             RunManager.enemiesLeft--;
         }
     }

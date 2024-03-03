@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ressourceIconScript : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class ressourceIconScript : MonoBehaviour
     void Start()
     {
         nbRessource.text = GameValues.instance.getItem(ressourceName, GameValues.instance.currentRunInventory) + "";
-
     }
 
     // Update is called once per frame
