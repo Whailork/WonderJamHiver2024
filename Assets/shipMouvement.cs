@@ -108,34 +108,7 @@ public class shipMouvement : MonoBehaviour
         }
 
     }
-    /*private void OnCollisionEnter2D(Collision2D colision)
-    {
-        Debug.Log("debut");
-        if (colision.collider.CompareTag("asteroid"))
-        {
-            Debug.Log("touche");
-            vie--; //ne pas oublier de le remettre
-            if (vie == 2)
-            {
-                Barre3.enabled = false;
-            }
-
-            else if (vie == 1)
-            {
-                Barre2.enabled = false;
-            }
-
-            else if (vie <= 0)
-            {
-                SceneManager.LoadScene("mainMenuScene");
-                Barre3.enabled = true;
-                Barre2.enabled = true;
-                Barre1.enabled = true;
-                Destroy(this.gameObject);
-            }
-            
-        }
-    }*/
+  
 
     private void OnCollisionEnter2D(Collision2D colision)
     {
