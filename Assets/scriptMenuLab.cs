@@ -38,6 +38,8 @@ public class scriptMenuLab : MonoBehaviour
     public Sprite[] arraySprite;
 
     public Sprite[] arrayMotif;
+
+    public Sprite[] arrayCouleurs;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,50 +94,71 @@ public class scriptMenuLab : MonoBehaviour
         requiredShape = GameValues.instance.recettesAnimaux[choice].requiredShape;
         requiredMotif = GameValues.instance.recettesAnimaux[choice].requiredMotif;
         
-        System.Drawing.Color color = System.Drawing.Color.FromName(requiredColor.name);
         if (choice < imagesAnimaux.Length)
         {
             image.GetComponent<Image>().sprite = imagesAnimaux[choice];
         }
+
+        switch (requiredColor.name)
+        {
+            case "Red":
+                colorPlaceOlder.GetComponent<Image>().sprite = arrayCouleurs[0];
+                break;
+            case "Orange":
+                colorPlaceOlder.GetComponent<Image>().sprite = arrayCouleurs[1];
+                break;
+            case "Yellow":
+                colorPlaceOlder.GetComponent<Image>().sprite = arrayCouleurs[2];
+                break;
+            case "Green":
+                colorPlaceOlder.GetComponent<Image>().sprite = arrayCouleurs[3];
+                break;
+            case "Blue":
+                colorPlaceOlder.GetComponent<Image>().sprite = arrayCouleurs[4];
+                break;
+            case "Purple":
+                colorPlaceOlder.GetComponent<Image>().sprite = arrayCouleurs[5];
+                break;
+                
+        }
         
-        colorPlaceOlder.GetComponent<Image>().color = new Color(color.R, color.G, color.B);
         switch (requiredShape.name)
         {
             case "Triangle":
                 shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[0];
                 break;
             case "Pentagone":
-                //shapePlaceOlder.GetComponent<SpriteRenderer>().sprite = arraySprite[0];
+                shapePlaceOlder.GetComponent<SpriteRenderer>().sprite = arraySprite[1];
                 break;
             case "Carre":
-                shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[1];
-                break;
-            case "Losange":
                 shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[2];
                 break;
-            case "Hexagone":
+            case "Losange":
                 shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[3];
                 break;
-            case "Cercle":
+            case "Hexagone":
                 shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[4];
+                break;
+            case "Cercle":
+                shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[5];
                 break;
         }
 
-        /*switch (requiredMotif.name)
+        switch (requiredMotif.name)
         {
             case "Ligne":
-                motifPlaceOlder.GetComponent<SpriteRenderer>().sprite = arrayMotif[0];
+                motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[0];
                 break;
             case "Vague":
-                motifPlaceOlder.GetComponent<SpriteRenderer>().sprite = arrayMotif[1];
+                motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[1];
                 break;
             case "Carreaute":
-                motifPlaceOlder.GetComponent<SpriteRenderer>().sprite = arrayMotif[2];
+                motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[2];
                 break;
             case "Pois":
-                motifPlaceOlder.GetComponent<SpriteRenderer>().sprite = arrayMotif[3];
+                motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[3];
                 break;
-        }*/
+        }
         checkForRessources();
     }
 
