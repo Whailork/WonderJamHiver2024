@@ -175,6 +175,7 @@ public class scriptAsteroide : MonoBehaviour
         if (vie <= 0)
         {
             dropLoot();
+            RunManager.enemiesLive--;
             RunManager.enemiesCleared++;
             Destroy(this.gameObject);
         }
