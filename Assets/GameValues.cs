@@ -36,9 +36,9 @@ public class GameValues : MonoBehaviour
     {
         // Basiques (facile)
         recettesAnimaux.Add(new Combinaison("rat","mammifere",new Ressource("Yellow","common",6,true),new Ressource("Triangle","common",3,true),new Ressource("Pois","common",7,true)));
-        recettesAnimaux.Add(new Combinaison("colibri","oiseau",new Ressource("Yellow","common",7,true),new Ressource("Cercle","common",5,true),new Ressource("Pois","common",8,true)));
+        recettesAnimaux.Add(new Combinaison("canard","oiseau",new Ressource("Yellow","common",7,true),new Ressource("Cercle","common",5,true),new Ressource("Pois","common",8,true)));
         recettesAnimaux.Add(new Combinaison("coccinelle","insecte",new Ressource("Red","common",9,true),new Ressource("Cercle","common",7,true),new Ressource("Pois","common",7,true)));
-        recettesAnimaux.Add(new Combinaison("sardine","poisson",new Ressource("Yellow","common",5,true),new Ressource("Pentagone","uncommon",2,true),new Ressource("Pois","common",10,true)));
+        recettesAnimaux.Add(new Combinaison("Carpe Koi","poisson",new Ressource("Yellow","common",5,true),new Ressource("Pentagone","uncommon",2,true),new Ressource("Pois","common",10,true)));
         recettesAnimaux.Add(new Combinaison("gecko","reptile",new Ressource("Red","common",7,true),new Ressource("Triangle","common",3,true),new Ressource("Pois","common",8,true)));
 
         // Évolués (moyen)
@@ -48,18 +48,18 @@ public class GameValues : MonoBehaviour
         recettesAnimaux.Add(new Combinaison("lapin","mammifere",new Ressource("Purple","uncommon",7,true),new Ressource("Pentagone","uncommon",5,true),new Ressource("Carreau","uncommon",2,true)));
         // Oiseaus
         recettesAnimaux.Add(new Combinaison("corbeau","oiseau",new Ressource("Purple","uncommon",1,true),new Ressource("Losange","uncommon",2,true),new Ressource("Carreau","uncommon",10,true)));
-        recettesAnimaux.Add(new Combinaison("pique-bois","oiseau",new Ressource("Orange","uncommon",4,true),new Ressource("Losange","uncommon",3,true),new Ressource("Carreau","uncommon",3,true)));
-        recettesAnimaux.Add(new Combinaison("perroquet","oiseau",new Ressource("Purple","uncommon",10,true),new Ressource("Pentagone","uncommon",9,true),new Ressource("Carreau","uncommon",9,true)));
+        recettesAnimaux.Add(new Combinaison("pigeon","oiseau",new Ressource("Orange","uncommon",4,true),new Ressource("Losange","uncommon",3,true),new Ressource("Carreau","uncommon",3,true)));
+        recettesAnimaux.Add(new Combinaison("cockatiel","oiseau",new Ressource("Purple","uncommon",10,true),new Ressource("Pentagone","uncommon",9,true),new Ressource("Carreau","uncommon",9,true)));
         // Insectes
         recettesAnimaux.Add(new Combinaison("papillon","insecte",new Ressource("Orange","uncommon",6,true),new Ressource("Losange","uncommon",1,true),new Ressource("Carreau","uncommon",8,true)));
         recettesAnimaux.Add(new Combinaison("libellule","insecte",new Ressource("Purple","uncommon",2,true),new Ressource("Losange","uncommon",9,true),new Ressource("Carreau","uncommon",7,true)));
         recettesAnimaux.Add(new Combinaison("abeille","insecte",new Ressource("Orange","uncommon",8,true),new Ressource("Pentagone","uncommon",6,true),new Ressource("Carreau","uncommon",3,true)));
         // Poissons
-        recettesAnimaux.Add(new Combinaison("poisson-clown","poisson",new Ressource("Orange","uncommon",2,true),new Ressource("Pentagone","uncommon",8,true),new Ressource("Carreau","uncommon",1,true)));
+        recettesAnimaux.Add(new Combinaison("requin","poisson",new Ressource("Orange","uncommon",2,true),new Ressource("Pentagone","uncommon",8,true),new Ressource("Carreau","uncommon",1,true)));
         recettesAnimaux.Add(new Combinaison("poisson-lanterne","poisson",new Ressource("Orange","uncommon",10,true),new Ressource("Losange","uncommon",7,true),new Ressource("Carreau","uncommon",3,true)));
-        recettesAnimaux.Add(new Combinaison("anguille","poisson",new Ressource("Purple","uncommon",6,true),new Ressource("Losange","uncommon",6,true),new Ressource("Carreau","uncommon",9,true)));
+        recettesAnimaux.Add(new Combinaison("Meduse","poisson",new Ressource("Purple","uncommon",6,true),new Ressource("Losange","uncommon",6,true),new Ressource("Carreau","uncommon",9,true)));
         // Reptiles
-        recettesAnimaux.Add(new Combinaison("crocodile","reptile",new Ressource("Orange","uncommon",2,true),new Ressource("Losange","uncommon",10,true),new Ressource("Carreau","uncommon",7,true)));
+        recettesAnimaux.Add(new Combinaison("grenouille","reptile",new Ressource("Orange","uncommon",2,true),new Ressource("Losange","uncommon",10,true),new Ressource("Carreau","uncommon",7,true)));
         recettesAnimaux.Add(new Combinaison("tortue","reptile",new Ressource("Purple","uncommon",10,true),new Ressource("Pentagone","uncommon",8,true),new Ressource("Carreau","uncommon",10,true)));
         recettesAnimaux.Add(new Combinaison("serpent","reptile",new Ressource("Purple","uncommon",10,true),new Ressource("Losange","uncommon",6,true),new Ressource("Carreau","uncommon",2,true)));
         
