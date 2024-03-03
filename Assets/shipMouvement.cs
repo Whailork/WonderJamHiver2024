@@ -26,7 +26,7 @@ public class shipMouvement : MonoBehaviour
     public float spriteBlinkingTimer = 0.0f;
     public float spriteBlinkingMiniDuration = 1.0f;
     public float spriteBlinkingTotalTimer = 0.0f;
-    public float spriteBlinkingTotalDuration = 500f;
+    public float spriteBlinkingTotalDuration = 200f;
     public bool startBlinking = false;
 
     void Start()
@@ -41,26 +41,49 @@ public class shipMouvement : MonoBehaviour
     
     private void Update()
     {
-        
+       
+
+
+
+    }
+
+    public void throwProjectile()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.eulerAngles.z), Quaternion.identity);
+        cooldown = 30;
+        projectileScript controller = projectile.GetComponent<projectileScript>();
+        controller.setDirection(new Vector2(10*Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad),10*Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+        controller.setRotation(transform.eulerAngles.z);
+    }
+
+    private void FixedUpdate()
+    {
+        // Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddTorque(0.3f);
+            //rb.AddForce(Vector2.left);
+            rb.AddTorque(1.1f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(-0.3f);
+            //rb.AddForce(Vector2.right);
+            rb.AddTorque(-1.1f);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(new Vector2(0.5f * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad), 0.5f * Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+            // rb.AddForce(Vector2.up);
+            rb.AddForce(new Vector2(6f * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad), 6f * Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(new Vector2(-1 * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad), -1 * Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+            //rb.AddForce(Vector2.down);
+            rb.AddForce(new Vector2(-6 * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad), -6 * Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+
         }
 
         if (Input.GetKey(KeyCode.Space) && cooldown == 0)
@@ -84,22 +107,7 @@ public class shipMouvement : MonoBehaviour
             SpriteBlinkingEffect();
         }
 
-        //runManager.askAfterDead();
-
-
-    }
-
-    public void throwProjectile()
-    {
-        GameObject projectile = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.eulerAngles.z), Quaternion.identity);
-        cooldown = 30;
-        projectileScript controller = projectile.GetComponent<projectileScript>();
-        controller.setDirection(new Vector2(10*Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad),10*Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
-        controller.setRotation(transform.eulerAngles.z);
-    }
-
-    private void FixedUpdate()
-    {
+        
         if (cooldown != 0)
         {
             cooldown--;
@@ -118,7 +126,7 @@ public class shipMouvement : MonoBehaviour
             //bc.enabled = false;
             //bc.excludeLayers = 9;
             boxUp = false;
-            cooldownBC = 200;
+            cooldownBC = 90;
             startBlinking = true;
            
             /*if (vie == 2)
