@@ -179,7 +179,7 @@ public class scriptAsteroide : MonoBehaviour
 
     public void setPattern()
     {
-        direction = new Vector2(-position.x, -position.y);
+        direction = new Vector2(-1f * position.x, -1f * position.y);
 
         Random random = new Random();
         int rnd = random.Next(0, 3);
@@ -193,6 +193,7 @@ public class scriptAsteroide : MonoBehaviour
                 pattern = "sinus";
                 break;
             case (2):
+                Debug.Log("para");
                 pattern = "parabol";
                 break;
 
@@ -221,8 +222,7 @@ public class scriptAsteroide : MonoBehaviour
 
             case ("parabol"):
 
-                rb.AddForce(new Vector2((float)direction.x + 50f , ((float)(-1f * 10f * Time.time)) + 50f + (float)direction.y));
-
+                rb.AddForce(new Vector2((float)direction.x + 1f , ((float)(-1f * 3f * Time.time)) + 1f + (float)direction.y));
                 rb.velocity = rb.velocity.normalized * speed;
                 break;
         }
