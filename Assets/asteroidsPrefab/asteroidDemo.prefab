@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c777ce42eb0df549a83b19491e72cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   pattern: 
   speed: 5
   vie: 1
@@ -189,4 +190,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 441c71fd662580a4ab65c2dd0f82e44e, type: 3}
   - {fileID: 21300000, guid: 9262791a0a4dde4429c1c52ecdf21487, type: 3}
   - {fileID: 21300000, guid: 40fad6f7296cb834f908749298cf28d7, type: 3}
-  adnImage: {fileID: 510383672654828439, guid: 8f02559d4a5b518459057d2ceb80c6ee, type: 3}
+  adnImage: {fileID: 7143927722640929978, guid: 163097db91ad60f489aee3c676b2862e, type: 3}
