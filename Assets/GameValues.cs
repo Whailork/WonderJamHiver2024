@@ -128,7 +128,7 @@ public class GameValues : MonoBehaviour
         inventory.Add(new Ressource("Purple","rare",0,true));
         //formes
         inventory.Add(new Ressource("Triangle","common",0,true));
-        inventory.Add(new Ressource("pentagone","common",0,true));
+        inventory.Add(new Ressource("Pentagone","common",0,true));
         inventory.Add(new Ressource("Carre","uncommon",0,true));
         inventory.Add(new Ressource("Losange","uncommon",0,true));
         inventory.Add(new Ressource("Hexagone","rare",0,true));
