@@ -14,6 +14,7 @@ public class shipMouvement : MonoBehaviour
     private BoxCollider2D bc;
     private SpriteRenderer sprite;
     public GameObject projectilePrefab;
+    private bool boxUp = true;
     private int cooldown = 0;
     private int cooldownBC = 0;
     public int vie;
@@ -72,11 +73,13 @@ public class shipMouvement : MonoBehaviour
             throwProjectile();
         }
 
-        if (cooldownBC == 0 && bc.enabled == false)
+        if (cooldownBC == 0 && !boxUp)
         {
-            bc.enabled = true;
+            //bc.enabled = true;
+            boxUp = true;
+
         }
-        else if (bc.enabled == false)
+        else if (!boxUp)
         {
             cooldownBC--;
         }
@@ -113,15 +116,18 @@ public class shipMouvement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D colision)
     {
         Debug.Log("debut");
-        if (colision.collider.CompareTag("asteroid") && bc.enabled == true)
+        //if (colision.collider.CompareTag("asteroid") && bc.enabled == true)
+        if (colision.collider.CompareTag("asteroid") && boxUp)
         {
             Debug.Log(vie);
             vie--; //ne pas oublier de le remettre
-            bc.enabled = false;
+            //bc.enabled = false;
+            //bc.excludeLayers = 9;
+            boxUp = false;
             cooldownBC = 500;
             startBlinking = true;
             Debug.Log(vie);
-            if (vie == 2)
+            /*if (vie == 2)
             {
                 Barre3.enabled = false;
             }
@@ -129,9 +135,10 @@ public class shipMouvement : MonoBehaviour
             else if (vie == 1)
             {
                 Barre2.enabled = false;
-            }
+            }*/
 
-            else if (vie <= 0)
+            //else if (vie <= 0)
+            if (vie <= 0)
             {
                 SceneManager.LoadScene("mainMenuScene");
                 //Barre3.enabled = true;
@@ -151,7 +158,18 @@ public class shipMouvement : MonoBehaviour
             startBlinking = false;
             spriteBlinkingTotalTimer = 0.0f;
             sprite.enabled = true;   // according to 
-                                                                             //your sprite
+
+            if (vie == 2)
+            {
+                Barre3.enabled = false;
+            }
+
+            else if (vie == 1)
+            {
+                Barre2.enabled = false;
+            }
+
+            //your sprite
             return;
         }
 
@@ -162,10 +180,30 @@ public class shipMouvement : MonoBehaviour
             if (sprite.enabled == true)
             {
                 sprite.enabled = false;  //make changes
+
+                if (vie == 2)
+                {
+                    Barre3.enabled = false;
+                }
+
+                else if (vie == 1)
+                {
+                    Barre2.enabled = false;
+                }
             }
             else
             {
                 sprite.enabled = true;   //make changes
+
+                if (vie == 2)
+                {
+                    Barre3.enabled = true;
+                }
+
+                else if (vie == 1)
+                {
+                    Barre2.enabled = true;
+                }
             }
         }
     }

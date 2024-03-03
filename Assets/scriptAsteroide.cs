@@ -136,6 +136,7 @@ public class scriptAsteroide : MonoBehaviour
         position = transform.position;
         if (outOfBound())
         {
+            RunManager.enemiesLive--;
             RunManager.enemiesLeft++;
             Destroy(this.gameObject);
         }
@@ -149,21 +150,21 @@ public class scriptAsteroide : MonoBehaviour
         if (colorRnd >= 50)
         {
             Debug.Log("drop" + color.Name);
-            GameValues.instance.addItem(color.Name,1, GameValues.instance.inventory);
+            GameValues.instance.addItem(color.Name,1, GameValues.instance.currentRunInventory);
         }
         Random randomf = new Random();
         int formeRnd = randomf.Next(0, 100);
         if (formeRnd >= 50)
         {
             Debug.Log("drop" + form);
-            GameValues.instance.addItem(form,1,GameValues.instance.inventory);
+            GameValues.instance.addItem(form,1,GameValues.instance.currentRunInventory);
         }
         Random randomM = new Random();
         int motifRnd = randomM.Next(0, 100);
         if (motifRnd >= 50)
         {
             Debug.Log("drop" + motif);
-            GameValues.instance.addItem(motif,1,GameValues.instance.inventory);
+            GameValues.instance.addItem(motif,1,GameValues.instance.currentRunInventory);
         }
 
     }
@@ -174,6 +175,7 @@ public class scriptAsteroide : MonoBehaviour
         if (vie <= 0)
         {
             dropLoot();
+            RunManager.enemiesLive--;
             RunManager.enemiesCleared++;
             Destroy(this.gameObject);
         }
