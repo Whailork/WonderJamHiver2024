@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//using RunManager;
 
 public class shipMouvement : MonoBehaviour
 {
-
-    //public float offsetAngle = 180.0f;
-    // Start is called before the first frame update
     private Rigidbody2D rb;
-    private BoxCollider2D bc;
+    private CircleCollider2D bc;
     private SpriteRenderer sprite;
     public GameObject projectilePrefab;
     private bool boxUp = true;
@@ -21,6 +19,8 @@ public class shipMouvement : MonoBehaviour
     public Image Barre1;
     public Image Barre2;
     public Image Barre3;
+    public RunManager runManager;
+    //public GameObject alertMort;
 
 
     public float spriteBlinkingTimer = 0.0f;
@@ -32,12 +32,13 @@ public class shipMouvement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        bc = GetComponent<BoxCollider2D>();
+        bc = GetComponent<CircleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         vie = 3;
+        //alertMort.setAcitve(false);
     }
 
-    // Update is called once per frame
+    
     private void Update()
     {
        
@@ -117,18 +118,17 @@ public class shipMouvement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D colision)
     {
-        Debug.Log("debut");
-        //if (colision.collider.CompareTag("asteroid") && bc.enabled == true)
+       
         if (colision.collider.CompareTag("asteroid") && boxUp)
         {
-            Debug.Log(vie);
-            vie--; //ne pas oublier de le remettre
+     
+            vie--;
             //bc.enabled = false;
             //bc.excludeLayers = 9;
             boxUp = false;
             cooldownBC = 90;
             startBlinking = true;
-            Debug.Log(vie);
+           
             /*if (vie == 2)
             {
                 Barre3.enabled = false;
@@ -142,10 +142,13 @@ public class shipMouvement : MonoBehaviour
             //else if (vie <= 0)
             if (vie <= 0)
             {
-                SceneManager.LoadScene("mainMenuScene");
-                //Barre3.enabled = true;
-                //Barre2.enabled = true;
-                //Barre1.enabled = true;
+                //SceneManager.LoadScene("sceneLaboratory");
+
+                //alertMort.setActive(true);
+                runManager.askAfterDead();
+
+                RunManager.currentRun = 0;
+                RunManager.roundNumber = 1;
                 Destroy(this.gameObject);
             }
 

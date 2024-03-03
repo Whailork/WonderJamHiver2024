@@ -30,6 +30,21 @@ public class MenuButtons : MonoBehaviour
         SoundPlayer.instance.SetMusic(nextSong,1F);
     }
 
+    public void RetourLaboratoire()
+    {
+        RunManager.currentRun = 0;
+
+        SceneManager.LoadScene("sceneLaboratory");
+        SoundPlayer.instance.SetMusic(nextSong, 1F);
+    }
+
+    public void RetourMenu()
+    {
+        RunManager.currentRun = 0;
+
+        SceneManager.LoadScene("sceneLaboratory");
+        SoundPlayer.instance.SetMusic(nextSong, 1F);
+    }
     public void ContinuerExploration()
     {
         RunManager.newRun();
