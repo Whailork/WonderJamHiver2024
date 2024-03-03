@@ -12,11 +12,12 @@ public class RunManager : MonoBehaviour
     public static int enemiInRun = 0;
     public GameObject newRunAlert;
     private bool alertShown = false;
+    public GameObject canvas;
    
     
     void Start()
     {
-       // GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity);
+      //  GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity,canvas.transform);
         newRun();
     }
 
@@ -44,6 +45,6 @@ public class RunManager : MonoBehaviour
     public void askForNewRun()
     {
         alertShown = true;
-        //GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity,canvas.transform);
     }
 }

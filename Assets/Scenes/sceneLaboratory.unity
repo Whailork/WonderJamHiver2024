@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31db092134ab57445a5bc583fbd8d539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSong: {fileID: 8300000, guid: 4e874550f5ed74d43b8a1549d43050d3, type: 3}
 --- !u!114 &134307959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,6 +2019,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagAnimal: {fileID: 784719181}
+  image: {fileID: 638187968}
+  imagesAnimaux:
+  - {fileID: 21300000, guid: 6eeb30f3475a57b48b96211dc7ed3c7a, type: 3}
   colorAdd: {fileID: 555175860}
   shapeAdd: {fileID: 1815735106}
   motifAdd: {fileID: 295801404}
@@ -2026,12 +2030,24 @@ MonoBehaviour:
   shapePlaceOlder: {fileID: 1905566859}
   motifPlaceOlder: {fileID: 331474253}
   arraySprite:
-  - {fileID: 7482667652216324306, guid: 232cf5fcb62e93f459453841b8c6e645, type: 3}
-  - {fileID: 7482667652216324306, guid: a6258e8120f3f634cbce5c28301fa661, type: 3}
-  - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
-  - {fileID: 2747690628134850419, guid: 34aa040a56b39b443ba0177015362570, type: 3}
-  - {fileID: -2413806693520163455, guid: 5ec18b9cd59913346b2b9e8170d8bda2, type: 3}
-  arrayMotif: []
+  - {fileID: 21300000, guid: 9257a4821c8435b4ba2fe4a8a5699239, type: 3}
+  - {fileID: 21300000, guid: 5aeed1aeda9b96d40b6f64d4a3440fe7, type: 3}
+  - {fileID: 21300000, guid: 5cf55debf60001942a466bff9092aff3, type: 3}
+  - {fileID: 21300000, guid: 46e9ad1ee0e102c4e9ea6addb92b4efa, type: 3}
+  - {fileID: 21300000, guid: 7ff201e8b8d79544c8c1d92ccbf7cf92, type: 3}
+  - {fileID: 21300000, guid: ef741e14a8d2fd441b6a07e0308762db, type: 3}
+  arrayMotif:
+  - {fileID: 21300000, guid: e51a9f688127f9c438e83dc8e6a470b1, type: 3}
+  - {fileID: 21300000, guid: 4c3bf31b031518c4581d8bafaf274774, type: 3}
+  - {fileID: 21300000, guid: f0170a9d6d8182a4e9a4299da5f7e940, type: 3}
+  - {fileID: 21300000, guid: 71a8747b3ee818740b20e59fcb3ddd75, type: 3}
+  arrayCouleurs:
+  - {fileID: 21300000, guid: 91ea25cd24289084ab389689bcaedca7, type: 3}
+  - {fileID: 21300000, guid: 7c2cb21c967d9be4b862c9446a408588, type: 3}
+  - {fileID: 21300000, guid: 767d9a5427f377544b2fd40950854f56, type: 3}
+  - {fileID: 21300000, guid: f354fd8a760b75c44aefe30395bee047, type: 3}
+  - {fileID: 21300000, guid: c46d7d463c61e9b42bc1e2dbb548a74e, type: 3}
+  - {fileID: 21300000, guid: 84dce3ee51d601b49a52bab96cf5ad6a, type: 3}
 --- !u!4 &1318980097
 Transform:
   m_ObjectHideFlags: 0
@@ -2059,7 +2075,6 @@ GameObject:
   - component: {fileID: 1325830058}
   - component: {fileID: 1325830057}
   - component: {fileID: 1325830056}
-  - component: {fileID: 1325830060}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2158,28 +2173,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1325830060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325830055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61547792fe0996847b6bb996fb1527c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagAnimal: {fileID: 784719181}
-  colorAdd: {fileID: 0}
-  shapeAdd: {fileID: 0}
-  motifAdd: {fileID: 0}
-  spliceBtn: {fileID: 0}
-  colorPlaceOlder: {fileID: 0}
-  shapePlaceOlder: {fileID: 0}
-  motifPlaceOlder: {fileID: 0}
-  arraySprite: []
-  arrayMotif: []
 --- !u!1 &1353789675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2306,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353789675}
   m_CullTransparentMesh: 1
+--- !u!1 &1518169127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518169129}
+  - component: {fileID: 1518169128}
+  m_Layer: 0
+  m_Name: AudioPLayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1518169128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518169127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 732697c19eac62c4da8dd09f4f70c45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 8300000, guid: 65d995ebb3668e24eb1fb9c230e7d1b4, type: 3}
+--- !u!4 &1518169129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518169127}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 233.95575, y: 116.108315, z: 2.2720833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545402743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,3 +2904,4 @@ SceneRoots:
   - {fileID: 2014715422}
   - {fileID: 1318980097}
   - {fileID: 406637477}
+  - {fileID: 1518169129}

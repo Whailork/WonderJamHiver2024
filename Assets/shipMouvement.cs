@@ -96,7 +96,8 @@ public class shipMouvement : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.eulerAngles.z), Quaternion.identity);
         cooldown = 30;
         projectileScript controller = projectile.GetComponent<projectileScript>();
-        controller.setDirection(new Vector2(10 * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad), 10 * Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+        controller.setDirection(new Vector2(10*Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad),10*Mathf.Sin(rb.rotation * Mathf.Deg2Rad + 90f * Mathf.Deg2Rad)));
+        controller.setRotation(transform.eulerAngles.z);
     }
 
     private void FixedUpdate()
@@ -107,34 +108,7 @@ public class shipMouvement : MonoBehaviour
         }
 
     }
-    /*private void OnCollisionEnter2D(Collision2D colision)
-    {
-        Debug.Log("debut");
-        if (colision.collider.CompareTag("asteroid"))
-        {
-            Debug.Log("touche");
-            vie--; //ne pas oublier de le remettre
-            if (vie == 2)
-            {
-                Barre3.enabled = false;
-            }
-
-            else if (vie == 1)
-            {
-                Barre2.enabled = false;
-            }
-
-            else if (vie <= 0)
-            {
-                SceneManager.LoadScene("mainMenuScene");
-                Barre3.enabled = true;
-                Barre2.enabled = true;
-                Barre1.enabled = true;
-                Destroy(this.gameObject);
-            }
-            
-        }
-    }*/
+  
 
     private void OnCollisionEnter2D(Collision2D colision)
     {

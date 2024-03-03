@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -336.5946, y: -188.6817, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,7 +109,7 @@ Rigidbody2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -174,14 +174,10 @@ MonoBehaviour:
   pattern: 
   speed: 5
   vie: 1
-  spriteArray:
-  - {fileID: 7482667652216324306, guid: 232cf5fcb62e93f459453841b8c6e645, type: 3}
-  - {fileID: -9095717837082945937, guid: fb6cb4121dc91c448b6f8163c670256a, type: 3}
-  - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
-  - {fileID: 7482667652216324306, guid: a6258e8120f3f634cbce5c28301fa661, type: 3}
-  - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
-  - {fileID: 2747690628134850419, guid: 34aa040a56b39b443ba0177015362570, type: 3}
-  - {fileID: -2413806693520163455, guid: 5ec18b9cd59913346b2b9e8170d8bda2, type: 3}
-  motifArray:
-  - {fileID: 21300000, guid: ec05601b980f45d489d6681c43056d6a, type: 3}
-  - {fileID: 21300000, guid: 5d012aed1e0a19b4eae1d01023de9341, type: 3}
+  arrayAsteroides:
+  - {fileID: 21300000, guid: c73d463db62129c4f87dbaad1b0128b1, type: 3}
+  - {fileID: 21300000, guid: 59333c227d7cf1246b14ab99090c3254, type: 3}
+  - {fileID: 21300000, guid: f1b4c33c171d40c4d84f672a0af1b917, type: 3}
+  - {fileID: 21300000, guid: cbad49cc59def254d8c9aa4c906b4d94, type: 3}
+  - {fileID: 21300000, guid: 7280c8c5ade635f41ad1ea5506ca69e2, type: 3}
+  - {fileID: 21300000, guid: 80d995a31f9030c4e9955a77ee8a8615, type: 3}
