@@ -11,9 +11,11 @@ using UnityEngineColor = UnityEngine.Color;
 
 public class scriptAsteroide : MonoBehaviour
 {
+    public Canvas canvas;
     private Color color = new Color();
 
     private string form;
+    
 
     private string motif;
 
@@ -156,7 +158,7 @@ public class scriptAsteroide : MonoBehaviour
 
     }
 
-    private void dropLoot()
+    private void dropLoot(Vector3 position)
     {
         Random random = new Random();
         int colorRnd = random.Next(0, 100);
@@ -165,7 +167,7 @@ public class scriptAsteroide : MonoBehaviour
             Debug.Log("drop" + color.Name);
             GameValues.instance.addItem(color.Name,1, GameValues.instance.currentRunInventory);
 
-            afficheLoot(color.Name);
+            afficheLoot(color.Name,position);
         }
         Random randomf = new Random();
         int formeRnd = randomf.Next(0, 100);
@@ -174,7 +176,7 @@ public class scriptAsteroide : MonoBehaviour
             Debug.Log("drop" + form);
             GameValues.instance.addItem(form,1,GameValues.instance.currentRunInventory);
             
-            afficheLoot(form);
+            afficheLoot(form,position);
         }
         Random randomM = new Random();
         int motifRnd = randomM.Next(0, 100);
@@ -183,35 +185,36 @@ public class scriptAsteroide : MonoBehaviour
             Debug.Log("drop" + motif);
             GameValues.instance.addItem(motif,1,GameValues.instance.currentRunInventory);
             
-            afficheLoot(motif);
+            afficheLoot(motif,position);
         }
 
     }
 
-    public void afficheLoot(string loot)
+    public void afficheLoot(string loot,Vector3 position)
     {
         // Image invisible
-        adnImage.GetComponent<Image>().sprite = adnColors[6];
+        GameObject imageLoot = Instantiate(adnImage, position, Quaternion.identity);
+            imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[6];
         
         switch (loot)
         {
             case "Red":
-                adnImage.GetComponent<Image>().sprite = adnColors[0];
+                imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[0];
                 break;
             case "Orange":
-                adnImage.GetComponent<Image>().sprite = adnColors[1];
+                imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[1];
                 break;
             case "Yellow":
-                adnImage.GetComponent<Image>().sprite = adnColors[2];
+                imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[2];
                 break;
             case "Green":
-                adnImage.GetComponent<Image>().sprite = adnColors[3];
+                imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[3];
                 break;
             case "Blue":
-                adnImage.GetComponent<Image>().sprite = adnColors[4];
+                imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[4];
                 break;
             case "Purple":
-                adnImage.GetComponent<Image>().sprite = adnColors[5];
+                imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[5];
                 break;
         }
     }
@@ -221,7 +224,7 @@ public class scriptAsteroide : MonoBehaviour
         Debug.Log("asteroid Damage");
         if (vie <= 0)
         {
-            dropLoot();
+            dropLoot(this.gameObject.transform.position);
             RunManager.enemiesLive--;
             RunManager.enemiesCleared++;
             Destroy(this.gameObject);

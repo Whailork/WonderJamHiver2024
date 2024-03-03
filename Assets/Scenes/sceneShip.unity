@@ -534,8 +534,20 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3607113602160298222, guid: 1cb57857a91082944958b298fbde6518, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607113602160298222, guid: 1cb57857a91082944958b298fbde6518, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RetourMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607113602160298222, guid: 1cb57857a91082944958b298fbde6518, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607113602160298222, guid: 1cb57857a91082944958b298fbde6518, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3714114885807685563, guid: 1cb57857a91082944958b298fbde6518, type: 3}
       propertyPath: m_text
