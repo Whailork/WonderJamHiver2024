@@ -183,11 +183,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7280c8c5ade635f41ad1ea5506ca69e2, type: 3}
   - {fileID: 21300000, guid: 80d995a31f9030c4e9955a77ee8a8615, type: 3}
   adnColors:
-  - {fileID: 21300000, guid: cba5a272b76af5e41a27a02e5f6ae878, type: 3}
-  - {fileID: 21300000, guid: bf6cec5272408a8419a35ab26cc1ed51, type: 3}
-  - {fileID: 21300000, guid: c0910ccd288f9754baa4773735a31790, type: 3}
-  - {fileID: 21300000, guid: 9c8a5f5a7bf245d40a28bcea2f3a198e, type: 3}
-  - {fileID: 21300000, guid: 441c71fd662580a4ab65c2dd0f82e44e, type: 3}
-  - {fileID: 21300000, guid: 9262791a0a4dde4429c1c52ecdf21487, type: 3}
+  - {fileID: 21300000, guid: 940772b1c13035e4286e27e4e32d8e08, type: 3}
+  - {fileID: 21300000, guid: bc1714f9a4bf6cc4aadf3d308b5b1aaa, type: 3}
+  - {fileID: 21300000, guid: e943f3bd4120aa844a1b0f0f09e0c095, type: 3}
+  - {fileID: 21300000, guid: 60ca90ce87308cc4c9cdfde181872650, type: 3}
+  - {fileID: 21300000, guid: d97b2055427fdb1469fa05def5d94e5c, type: 3}
+  - {fileID: 21300000, guid: 27e1f3dbc8a66394bbab456c8a7ce588, type: 3}
   - {fileID: 21300000, guid: 40fad6f7296cb834f908749298cf28d7, type: 3}
   adnImage: {fileID: 7143927722640929978, guid: 163097db91ad60f489aee3c676b2862e, type: 3}
+  test: {fileID: 0}

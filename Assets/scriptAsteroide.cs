@@ -201,6 +201,7 @@ public class scriptAsteroide : MonoBehaviour
         // Image invisible
         GameObject imageLoot = Instantiate(adnImage, position, Quaternion.identity);
             imageLoot.GetComponent<SpriteRenderer>().sprite = adnColors[6];
+            imageLoot.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
         
         switch (loot)
         {
