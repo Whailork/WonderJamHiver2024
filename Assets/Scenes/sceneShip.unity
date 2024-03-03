@@ -148,9 +148,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1451559120}
     - target: {fileID: 1148744613914707336, guid: ef7dde42ae154344a81cb12ab5b49908, type: 3}
+      propertyPath: onHitFx
+      value: 
+      objectReference: {fileID: 8300000, guid: d56fb7fab257b934fb056eda8ca29c50, type: 3}
+    - target: {fileID: 1148744613914707336, guid: ef7dde42ae154344a81cb12ab5b49908, type: 3}
+      propertyPath: shootFx
+      value: 
+      objectReference: {fileID: 8300000, guid: 698f50d399250eb4dbc84aa9e135b69c, type: 3}
+    - target: {fileID: 1148744613914707336, guid: ef7dde42ae154344a81cb12ab5b49908, type: 3}
       propertyPath: runManager
       value: 
       objectReference: {fileID: 1397226053}
+    - target: {fileID: 1148744613914707336, guid: ef7dde42ae154344a81cb12ab5b49908, type: 3}
+      propertyPath: shipmoveFx
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d9c88fcbacedc2479d53a5024fcd9f1, type: 3}
     - target: {fileID: 4365278739949416386, guid: ef7dde42ae154344a81cb12ab5b49908, type: 3}
       propertyPath: m_LocalScale.x
       value: 195.22029
