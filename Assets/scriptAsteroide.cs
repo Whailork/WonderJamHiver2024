@@ -191,10 +191,10 @@ public class scriptAsteroide : MonoBehaviour
         switch (rnd)
         {
             case (0):
-              
+                pattern = "straight";
                 break;
             case (1):
-                
+                pattern = "sinus";
                 break;
             case (2):
                 
