@@ -25,6 +25,11 @@ public class projectileScript : MonoBehaviour
         
     }
 
+    public void setRotation(float rotation)
+    {
+        rb.rotation = rotation;
+    }
+
     private void OnCollisionEnter2D(Collision2D colision)
     {
         if (colision.collider.CompareTag("asteroid"))

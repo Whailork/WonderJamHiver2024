@@ -148,17 +148,21 @@ public class scriptAsteroide : MonoBehaviour
         int colorRnd = random.Next(0, 100);
         if (colorRnd >= 50)
         {
+            Debug.Log("drop" + color.Name);
             GameValues.instance.addItem(color.Name,1, GameValues.instance.inventory);
         }
-
-        int formeRnd = random.Next(0, 100);
+        Random randomf = new Random();
+        int formeRnd = randomf.Next(0, 100);
         if (formeRnd >= 50)
         {
+            Debug.Log("drop" + form);
             GameValues.instance.addItem(form,1,GameValues.instance.inventory);
         }
-        int motifRnd = random.Next(0, 100);
+        Random randomM = new Random();
+        int motifRnd = randomM.Next(0, 100);
         if (motifRnd >= 50)
         {
+            Debug.Log("drop" + motif);
             GameValues.instance.addItem(motif,1,GameValues.instance.inventory);
         }
 
@@ -187,13 +191,13 @@ public class scriptAsteroide : MonoBehaviour
         switch (rnd)
         {
             case (0):
-                pattern = "straight";
+              
                 break;
             case (1):
-                pattern = "sinus";
+                
                 break;
             case (2):
-                Debug.Log("para");
+                
                 pattern = "parabol";
                 break;
 
