@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 using System.Drawing;
+using System.Net.Mime;
 using UnityEngine.UIElements;
 using Color = System.Drawing.Color;
 using UnityEngineColor = UnityEngine.Color;
@@ -35,8 +36,8 @@ public class scriptAsteroide : MonoBehaviour
     public Sprite[] arrayAsteroides;
     
     public Sprite[] adnColors;
-
-    private Script imageADN;
+    
+    public GameObject adnImage;
     
     // Start is called before the first frame update
     void Start()
@@ -156,7 +157,7 @@ public class scriptAsteroide : MonoBehaviour
             Debug.Log("drop" + color.Name);
             GameValues.instance.addItem(color.Name,1, GameValues.instance.currentRunInventory);
 
-            afficheLoot();
+            afficheLoot(color.Name);
         }
         Random randomf = new Random();
         int formeRnd = randomf.Next(0, 100);
@@ -165,7 +166,7 @@ public class scriptAsteroide : MonoBehaviour
             Debug.Log("drop" + form);
             GameValues.instance.addItem(form,1,GameValues.instance.currentRunInventory);
             
-            afficheLoot();
+            afficheLoot(form);
         }
         Random randomM = new Random();
         int motifRnd = randomM.Next(0, 100);
@@ -174,14 +175,37 @@ public class scriptAsteroide : MonoBehaviour
             Debug.Log("drop" + motif);
             GameValues.instance.addItem(motif,1,GameValues.instance.currentRunInventory);
             
-            afficheLoot();
+            afficheLoot(motif);
         }
 
     }
 
-    public void afficheLoot()
+    public void afficheLoot(string loot)
     {
+        // Image invisible
+        adnImage.GetComponent<Image>().image = adnColors[6].texture;
         
+        switch (loot)
+        {
+            case "Red":
+                adnImage.GetComponent<Image>().image = adnColors[0].texture;
+                break;
+            case "Orange":
+                adnImage.GetComponent<Image>().image = adnColors[1].texture;
+                break;
+            case "Yellow":
+                adnImage.GetComponent<Image>().image = adnColors[2].texture;
+                break;
+            case "Green":
+                adnImage.GetComponent<Image>().image = adnColors[3].texture;
+                break;
+            case "Blue":
+                adnImage.GetComponent<Image>().image = adnColors[4].texture;
+                break;
+            case "Purple":
+                adnImage.GetComponent<Image>().image = adnColors[5].texture;
+                break;
+        }
     }
     public void takeDamage()
     {
