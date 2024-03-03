@@ -1,26 +1,12 @@
-Font: 1UP!  Style: Regular
-Point Size: 52   SP/PD Ratio: 9.6%
+Font: Pixel Times  Style: Regular
+Point Size: 65   SP/PD Ratio: 7.7%
 
-Characters included: 81/99
-Missing characters: 18
+Characters included: 95/99
+Missing characters: 4
 Excluded characters: 0
 
 Characters missing from font file:
 ----------------------------------------
-ID: 35	Hex: 23	Char [#]
-ID: 37	Hex: 25	Char [%]
-ID: 38	Hex: 26	Char [&]
-ID: 40	Hex: 28	Char [(]
-ID: 41	Hex: 29	Char [)]
-ID: 47	Hex: 2F	Char [/]
-ID: 91	Hex: 5B	Char [[]
-ID: 92	Hex: 5C	Char [\]
-ID: 93	Hex: 5D	Char []]
-ID: 94	Hex: 5E	Char [^]
-ID: 96	Hex: 60	Char [`]
-ID: 123	Hex: 7B	Char [{]
-ID: 125	Hex: 7D	Char [}]
-ID: 126	Hex: 7E	Char [~]
 ID: 160	Hex: A0	Char [ ]
 ID: 8203	Hex: 200B	Char [​]
 ID: 8230	Hex: 2026	Char […]
