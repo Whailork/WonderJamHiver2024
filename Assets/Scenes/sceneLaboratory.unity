@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31db092134ab57445a5bc583fbd8d539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSong: {fileID: 8300000, guid: 4e874550f5ed74d43b8a1549d43050d3, type: 3}
 --- !u!114 &134307959
 MonoBehaviour:
   m_ObjectHideFlags: 0

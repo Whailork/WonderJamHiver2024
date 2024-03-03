@@ -146,18 +146,20 @@ public class asteroidGeneratorScript : MonoBehaviour
         {
             case (0):
                 //return new Vector3((float)(random.Next(-width / 2, width / 2)), height, 0f);
-                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, height, 0);
+                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, height/2, 0);
 
             case (1):
-                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);
-                return new Vector3(width, (float)(random.Next(0, (int)height) - height / 2), 0);
+                //return new Vector3(width, (float)(random.Next(-height / 2, height / 2)), 0f);�
+                Debug.Log("droite");
+                return new Vector3(width/2, (float)(random.Next(0, (int)height) - height / 2), 0);
 
             case (2):
                 // return new Vector3((float)(random.Next(-width / 2, width / 2)), -height, 0f);
-                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, -height, 0);
+                return new Vector3((float)(random.Next(0, (int)width)) - width / 2, -height/2, 0);
 
             case (3):
-                return new Vector3(-width, (float)(random.Next(0, (int)height)) - height / 2, 0);
+                Debug.Log("gauche");
+                return new Vector3(-width/2, (float)(random.Next(0, (int)height)) - height / 2, 0);
             
             default:
                 return new Vector3(0,0,0);
@@ -167,20 +169,20 @@ public class asteroidGeneratorScript : MonoBehaviour
     int nbRndAsteroide()
     {
         Random random = new Random();
-        int nbRnd = random.Next(0, 20);
+        int nbRnd = random.Next(0, 200);
         switch (nbRnd)
         {
-            case > 0 and <= 11:
+            case > 0 and <= 59:
                 return 4;   // rouge - pois - cercle
-            case > 11 and <= 23:
+            case > 59 and <= 119:
                 return 1;   // jaune - pois - triangle
-            case > 23 and <= 28:
+            case > 119 and <= 144:
                 return 3;   // orange - carreau - pentagone
-            case > 28 and <= 33:
+            case > 144 and <= 169:
                 return 2;   // mauve - carreau = losange
-            case > 33 and <= 36:
+            case > 169 and <= 184:
                 return 5;   // vert - ligne - hexagone
-            default: // case > 36 and <= 39:
+            default: // case > 184 and <= 199:
                 return 0;   // bleu - vague - carré
         }
     }

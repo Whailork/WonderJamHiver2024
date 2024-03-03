@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class shipMouvement : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class shipMouvement : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject projectilePrefab;
     private int cooldown = 0;
-    public int vie;
+    public int vie = 3;
+    public Image Barre1;
+    public Image Barre2;
+    public Image Barre3;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,13 +30,13 @@ public class shipMouvement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             //rb.AddForce(Vector2.left);
-            rb.AddTorque(0.1f);
+            rb.AddTorque(0.3f);
         }
           
         if (Input.GetKey(KeyCode.D))
         {
             //rb.AddForce(Vector2.right);
-            rb.AddTorque(-0.1f);
+            rb.AddTorque(-0.3f);
         }
           
         if (Input.GetKey(KeyCode.W))
@@ -75,12 +79,27 @@ public class shipMouvement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D colision)
     {
+        Debug.Log("debut");
         if (colision.collider.CompareTag("asteroid"))
         {
-            //vie--; ne pas oublier de le remettre
-            if (vie <= 0)
+            Debug.Log("touche");
+            vie--; //ne pas oublier de le remettre
+            if (vie == 2)
+            {
+                Barre3.enabled = false;
+            }
+
+            else if (vie == 1)
+            {
+                Barre2.enabled = false;
+            }
+
+            else if (vie <= 0)
             {
                 SceneManager.LoadScene("mainMenuScene");
+                Barre3.enabled = true;
+                Barre2.enabled = true;
+                Barre1.enabled = true;
                 Destroy(this.gameObject);
             }
             
