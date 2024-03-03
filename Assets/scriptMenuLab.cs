@@ -94,8 +94,8 @@ public class scriptMenuLab : MonoBehaviour
         }
         choose(choice);
         
-        GameValues.instance.updateScore(1);
-        adjustScore(); // A ENLEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //GameValues.instance.updateScore(1);
+        //adjustScore(); // A ENLEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     public void choose(int choice)

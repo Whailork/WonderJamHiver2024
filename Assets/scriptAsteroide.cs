@@ -34,6 +34,8 @@ public class scriptAsteroide : MonoBehaviour
     
     public Sprite[] arrayAsteroides;
     
+    public Sprite[] adnColors;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -151,6 +153,8 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + color.Name);
             GameValues.instance.addItem(color.Name,1, GameValues.instance.currentRunInventory);
+
+            afficheLoot();
         }
         Random randomf = new Random();
         int formeRnd = randomf.Next(0, 100);
@@ -158,6 +162,8 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + form);
             GameValues.instance.addItem(form,1,GameValues.instance.currentRunInventory);
+            
+            afficheLoot();
         }
         Random randomM = new Random();
         int motifRnd = randomM.Next(0, 100);
@@ -165,8 +171,15 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + motif);
             GameValues.instance.addItem(motif,1,GameValues.instance.currentRunInventory);
+            
+            afficheLoot();
         }
 
+    }
+
+    public void afficheLoot()
+    {
+        
     }
     public void takeDamage()
     {
