@@ -38,6 +38,8 @@ public class scriptAsteroide : MonoBehaviour
     public Sprite[] adnColors;
     
     public GameObject adnImage;
+
+    public GameObject test;
     
     // Start is called before the first frame update
     void Start()
@@ -183,27 +185,27 @@ public class scriptAsteroide : MonoBehaviour
     public void afficheLoot(string loot)
     {
         // Image invisible
-        adnImage.GetComponent<Image>().image = adnColors[6].texture;
+        adnImage.GetComponent<Image>().sprite = adnColors[6];
         
         switch (loot)
         {
             case "Red":
-                adnImage.GetComponent<Image>().image = adnColors[0].texture;
+                adnImage.GetComponent<Image>().sprite = adnColors[0];
                 break;
             case "Orange":
-                adnImage.GetComponent<Image>().image = adnColors[1].texture;
+                adnImage.GetComponent<Image>().sprite = adnColors[1];
                 break;
             case "Yellow":
-                adnImage.GetComponent<Image>().image = adnColors[2].texture;
+                adnImage.GetComponent<Image>().sprite = adnColors[2];
                 break;
             case "Green":
-                adnImage.GetComponent<Image>().image = adnColors[3].texture;
+                adnImage.GetComponent<Image>().sprite = adnColors[3];
                 break;
             case "Blue":
-                adnImage.GetComponent<Image>().image = adnColors[4].texture;
+                adnImage.GetComponent<Image>().sprite = adnColors[4];
                 break;
             case "Purple":
-                adnImage.GetComponent<Image>().image = adnColors[5].texture;
+                adnImage.GetComponent<Image>().sprite = adnColors[5];
                 break;
         }
     }
