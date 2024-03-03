@@ -42,6 +42,8 @@ public class scriptAsteroide : MonoBehaviour
     private Sprite imageADN;
     
     public GameObject adnImage;
+
+    public GameObject test;
     
     // Start is called before the first frame update
     void Start()
@@ -160,12 +162,13 @@ public class scriptAsteroide : MonoBehaviour
     {
         Random random = new Random();
         int colorRnd = random.Next(0, 100);
+        bool lootEarned = false;
         if (colorRnd >= 50)
         {
             Debug.Log("drop" + color.Name);
             GameValues.instance.addItem(color.Name,1, GameValues.instance.currentRunInventory);
 
-            afficheLoot(color.Name,position);
+            lootEarned = true;
         }
         Random randomf = new Random();
         int formeRnd = randomf.Next(0, 100);
@@ -173,8 +176,8 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + form);
             GameValues.instance.addItem(form,1,GameValues.instance.currentRunInventory);
-            
-            afficheLoot(form,position);
+
+            lootEarned = true;
         }
         Random randomM = new Random();
         int motifRnd = randomM.Next(0, 100);
@@ -182,8 +185,13 @@ public class scriptAsteroide : MonoBehaviour
         {
             Debug.Log("drop" + motif);
             GameValues.instance.addItem(motif,1,GameValues.instance.currentRunInventory);
-            
-            afficheLoot(motif,position);
+
+            lootEarned = true;
+        }
+
+        if (lootEarned)
+        {
+            afficheLoot(color.Name,position);
         }
 
     }
