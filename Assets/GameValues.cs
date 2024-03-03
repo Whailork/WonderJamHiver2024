@@ -10,8 +10,6 @@ public class GameValues : MonoBehaviour
 {
 
     public static GameValues instance;
-
-   
     
     public int score { get; private set; }
     public List<Ressource> inventory = new();

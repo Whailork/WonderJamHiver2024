@@ -31,10 +31,15 @@ public class scriptMenuLab : MonoBehaviour
     public GameObject colorPlaceOlder;
     public GameObject shapePlaceOlder;
     public GameObject motifPlaceOlder;
+    
+    // nb d'items required de chaque
     public GameObject nbTexteCouleur;
     public GameObject nbTexteMotif;
     public GameObject nbTexteForme;
-
+    
+    public GameObject scoreText;
+    public GameObject backGroundScoreText;
+    
     private bool colorPlaced = false;
     private bool shapePlaced = false;
     private bool motifPlaced = false;
@@ -88,6 +93,8 @@ public class scriptMenuLab : MonoBehaviour
         }
         choose(choice);
         
+        GameValues.instance.updateScore(1);
+        adjustScore(); // A ENLEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     public void choose(int choice)
@@ -174,10 +181,12 @@ public class scriptMenuLab : MonoBehaviour
         nbTexteCouleur.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredColor.number.ToString();
         nbTexteMotif.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredMotif.number.ToString();
         nbTexteForme.GetComponent<TextMeshProUGUI>().text = animalRecette[choice].requiredShape.number.ToString();
+    }
 
-        nbTexteCouleur.GetComponent<TextMeshProUGUI>().faceColor = Color.red;
-        nbTexteCouleur.GetComponent<TextMeshProUGUI>().outlineColor = Color.white;
-        TextMeshPro m_TextMeshPro = GetComponent<TextMeshPro>() ?? gameObject.AddComponent<TextMeshPro>();
+    private void adjustScore()
+    {
+        int score = GameValues.instance.score;
+        scoreText.GetComponent<TextMeshProUGUI>().text = score.ToString();
     }
 
     private void checkForRessources()
@@ -296,6 +305,8 @@ public class scriptMenuLab : MonoBehaviour
         checkForRessources();
         checkForSplice();
         GameValues.instance.updateScore(1);
+        
+        adjustScore();
     }
     
 
