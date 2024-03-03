@@ -20,6 +20,8 @@ public class scriptMenuLab : MonoBehaviour
     private Ressource requiredColor;
     private Ressource requiredShape;
     private Ressource requiredMotif;
+    public GameObject image;
+    public Sprite[] imagesAnimaux;
     
     public GameObject colorAdd;
     public GameObject shapeAdd;
@@ -91,6 +93,11 @@ public class scriptMenuLab : MonoBehaviour
         requiredMotif = GameValues.instance.recettesAnimaux[choice].requiredMotif;
         
         System.Drawing.Color color = System.Drawing.Color.FromName(requiredColor.name);
+        if (choice < imagesAnimaux.Length)
+        {
+            image.GetComponent<Image>().sprite = imagesAnimaux[choice];
+        }
+        
         colorPlaceOlder.GetComponent<Image>().color = new Color(color.R, color.G, color.B);
         switch (requiredShape.name)
         {
