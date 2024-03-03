@@ -3,9 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+    public AudioClip nextSong;
     public void Play()
     {
         SceneManager.LoadScene("sceneLaboratory");
+        SoundPlayer.instance.SetMusic(nextSong,1F);
     }
 
     public void QuitGame()

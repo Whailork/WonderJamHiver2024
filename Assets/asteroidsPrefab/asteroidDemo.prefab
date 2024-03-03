@@ -171,9 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c777ce42eb0df549a83b19491e72cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pattern: 
+  speed: 5
   vie: 1
   spriteArray:
   - {fileID: 7482667652216324306, guid: 232cf5fcb62e93f459453841b8c6e645, type: 3}
+  - {fileID: -9095717837082945937, guid: fb6cb4121dc91c448b6f8163c670256a, type: 3}
   - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
   - {fileID: 7482667652216324306, guid: a6258e8120f3f634cbce5c28301fa661, type: 3}
   - {fileID: 3625043607559282579, guid: 5a55d5d89afbc144c86100260ddba7ca, type: 3}
