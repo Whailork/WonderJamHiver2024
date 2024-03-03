@@ -18,6 +18,7 @@ public class MenuButtons : MonoBehaviour
     public void explorer()
     {
         SceneManager.LoadScene("sceneShip");
+        SoundPlayer.instance.SetMusic(nextSong,1F);
     }
 
     public void EncaisserGains()
@@ -26,6 +27,7 @@ public class MenuButtons : MonoBehaviour
         RunManager.currentRun = 0;
         
         SceneManager.LoadScene("sceneLaboratory");
+        SoundPlayer.instance.SetMusic(nextSong,1F);
     }
 
     public void ContinuerExploration()
