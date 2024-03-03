@@ -118,7 +118,7 @@ public class shipMouvement : MonoBehaviour
             //bc.enabled = false;
             //bc.excludeLayers = 9;
             boxUp = false;
-            cooldownBC = 500;
+            cooldownBC = 200;
             startBlinking = true;
            
             /*if (vie == 2)

@@ -2853,7 +2853,7 @@ MonoBehaviour:
   nbTexteMotif: {fileID: 613984084}
   nbTexteForme: {fileID: 98432880}
   scoreText: {fileID: 798869772}
-  backGroundScoreText: {fileID: 0}
+  backGroundScoreText: {fileID: 1017737789}
   arraySprite:
   - {fileID: 21300000, guid: 9257a4821c8435b4ba2fe4a8a5699239, type: 3}
   - {fileID: 21300000, guid: 5aeed1aeda9b96d40b6f64d4a3440fe7, type: 3}
