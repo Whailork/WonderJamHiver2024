@@ -9,17 +9,20 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("sceneLaboratory");
         SoundPlayer.instance.SetMusic(nextSong,1F);
+        SoundPlayer.instance.PlaySFX(btnSound,2);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        SoundPlayer.instance.PlaySFX(btnSound,2);
     }
 
     public void explorer()
     {
         SceneManager.LoadScene("sceneShip");
         SoundPlayer.instance.SetMusic(nextSong,1F);
+        SoundPlayer.instance.PlaySFX(btnSound,2);
     }
 
     public void EncaisserGains()
@@ -29,6 +32,7 @@ public class MenuButtons : MonoBehaviour
         
         SceneManager.LoadScene("sceneLaboratory");
         SoundPlayer.instance.SetMusic(nextSong,1F);
+        SoundPlayer.instance.PlaySFX(btnSound,2);
     }
 
     public void RetourLaboratoire()
@@ -37,6 +41,7 @@ public class MenuButtons : MonoBehaviour
 
         SceneManager.LoadScene("sceneLaboratory");
         SoundPlayer.instance.SetMusic(nextSong, 1F);
+        SoundPlayer.instance.PlaySFX(btnSound,2);
     }
 
     public void RetourMenu()
@@ -45,6 +50,7 @@ public class MenuButtons : MonoBehaviour
 
         SceneManager.LoadScene("mainMenuScene");
         SoundPlayer.instance.SetMusic(nextSong, 1F);
+        SoundPlayer.instance.PlaySFX(btnSound,2);
     }
     public void ContinuerExploration()
     {
