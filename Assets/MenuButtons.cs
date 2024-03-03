@@ -25,6 +25,8 @@ public class MenuButtons : MonoBehaviour
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }
 
+   
+
     public void EncaisserGains()
     {
         GameValues.instance.encaisserGains();
@@ -52,9 +54,11 @@ public class MenuButtons : MonoBehaviour
         SoundPlayer.instance.SetMusic(nextSong, 1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }
-    public void ContinuerExploration()
+    public void ContinuerExploration(GameObject alerte)
     {
         RunManager.newRun();
+        SoundPlayer.instance.PlaySFX(btnSound,2);
+        Destroy(alerte);
     }
 
     

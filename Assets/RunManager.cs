@@ -18,6 +18,7 @@ public class RunManager : MonoBehaviour
     private bool alertShown = false;
     public GameObject canvas;
     public static bool endGeneration = false;
+    
 
     //public GameObject starship;
    
