@@ -42,7 +42,7 @@ public class MenuButtons : MonoBehaviour
     {
         RunManager.currentRun = 0;
 
-        SceneManager.LoadScene("sceneLaboratory");
+        SceneManager.LoadScene("mainMenuScene");
         SoundPlayer.instance.SetMusic(nextSong, 1F);
     }
     public void ContinuerExploration()
