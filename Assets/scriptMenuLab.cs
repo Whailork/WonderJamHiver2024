@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class scriptMenuLab : MonoBehaviour
 {
     int choice = 0;
-  //  int numberMaxAnimals = GameValues.instance.recettesAnimaux.Count;
-  int numberMaxAnimals = 3;
+    //int numberMaxAnimals = GameValues.instance.recettesAnimaux.Count;
+  int numberMaxAnimals = 25;
   private bool canCraft;
     public TMP_Text tagAnimal;
     //public TextMeshProUGUI tagAnimal;
@@ -128,7 +128,7 @@ public class scriptMenuLab : MonoBehaviour
                 shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[0];
                 break;
             case "Pentagone":
-                shapePlaceOlder.GetComponent<SpriteRenderer>().sprite = arraySprite[1];
+                shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[1];
                 break;
             case "Carre":
                 shapePlaceOlder.GetComponent<Image>().sprite = arraySprite[2];
@@ -152,7 +152,7 @@ public class scriptMenuLab : MonoBehaviour
             case "Vague":
                 motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[1];
                 break;
-            case "Carreaute":
+            case "Carreau":
                 motifPlaceOlder.GetComponent<Image>().sprite = arrayMotif[2];
                 break;
             case "Pois":
