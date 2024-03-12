@@ -15,7 +15,7 @@ public class RunManager : MonoBehaviour
     public static int roundNumber = 1;
     public static int enemiesTogether = 0;
     public static int enemiesLive = 0;
-    private bool alertShown = false;
+    public static bool alertShown = false;
     public GameObject canvas;
     public static bool endGeneration = false;
     
@@ -27,15 +27,17 @@ public class RunManager : MonoBehaviour
     {
       //  GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity,canvas.transform);
         newRun();
+        
     }
 
     public static void newRun()
     {
+        alertShown = false;
         endGeneration = false;
         currentRun++;
         if (currentRun == 1)
         {
-            GameValues.instance.createInventory(GameValues.instance.currentRunInventory);
+            GameValues.instance.resetRunInventory();
         }
 
         switch (roundNumber)
@@ -68,16 +70,14 @@ public class RunManager : MonoBehaviour
                 enemiesTogether = 7;
                 enemiesLive = 0;
                 break;
+            default:
+                enemiInRun = 12 + (roundNumber-4) * 3;
+                enemiesLeft = enemiInRun;
+                enemiesCleared = 0;
+                enemiesTogether = 7 + (roundNumber - 4);
+                enemiesLive = 0;
+                break;
         }
-        /*
-        currentRun++;
-        enemiInRun = baseEnemiNb + currentRun - 1;
-        enemiesLeft = enemiInRun;
-        enemiesCleared = 0;
-        if (currentRun == 1)
-        {
-            GameValues.instance.createInventory(GameValues.instance.currentRunInventory);
-        }*/
 
     }
     // Update is called once per frame
@@ -99,14 +99,15 @@ public class RunManager : MonoBehaviour
         roundNumber++;
         alertShown = true;
         GameObject alerte = Instantiate(newRunAlert, new Vector3(0, 0, 0), Quaternion.identity,canvas.transform);
+        
     }
 
     public void askAfterDead()
     {
-        roundNumber = 1;
         alertShown = true;
-        Debug.Log("miam");
         GameObject alerte = Instantiate(newDeadAlert, new Vector3(0, 0, 0), Quaternion.identity, canvas.transform);
+        
         alerte.SetActive(true);
+        roundNumber = 1;
     }
 }

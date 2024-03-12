@@ -20,6 +20,9 @@ public class MenuButtons : MonoBehaviour
 
     public void explorer()
     {
+        RunManager.alertShown = false;
+        /*RunManager.currentRun = 0;
+        RunManager.roundNumber = 0;*/
         SceneManager.LoadScene("sceneShip");
         SoundPlayer.instance.SetMusic(nextSong,1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
@@ -27,36 +30,46 @@ public class MenuButtons : MonoBehaviour
 
    
 
-    public void EncaisserGains()
+    public void EncaisserGains(GameObject alerte)
     {
+        RunManager.alertShown = false;
         GameValues.instance.encaisserGains();
         RunManager.currentRun = 0;
+        RunManager.roundNumber = 0;
         
         SceneManager.LoadScene("sceneLaboratory");
         SoundPlayer.instance.SetMusic(nextSong,1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
+        Destroy(alerte);
     }
 
-    public void RetourLaboratoire()
+    public void RetourLaboratoire(GameObject alerte)
     {
+        RunManager.alertShown = false;
         RunManager.currentRun = 0;
+        RunManager.roundNumber = 0;
 
         SceneManager.LoadScene("sceneLaboratory");
         GameValues.instance.resetRunInventory();
         SoundPlayer.instance.SetMusic(nextSong, 1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
+        Destroy(alerte);
     }
 
-    public void RetourMenu()
+    public void RetourMenu(GameObject alerte)
     {
+        RunManager.alertShown = false;
         RunManager.currentRun = 0;
+        RunManager.roundNumber = 0;
 
         SceneManager.LoadScene("mainMenuScene");
         SoundPlayer.instance.SetMusic(nextSong, 1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
+        Destroy(alerte);
     }
     public void ContinuerExploration(GameObject alerte)
     {
+        RunManager.alertShown = false;
         RunManager.newRun();
         SoundPlayer.instance.PlaySFX(btnSound,2);
         Destroy(alerte);

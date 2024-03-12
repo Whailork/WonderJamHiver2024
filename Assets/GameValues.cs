@@ -23,6 +23,7 @@ public class GameValues : MonoBehaviour
             
             instance = this;
             createInventory(inventory);
+            createInventory(currentRunInventory);
             loadCombinaisons();
             DontDestroyOnLoad(this);
         }
@@ -157,9 +158,92 @@ public class GameValues : MonoBehaviour
         
     }
 
-    public void updateScore(int spliceValue)
+    private int checkColorRarity(int animalIndex)
     {
-        score += spliceValue * 5;
+        if (instance.recettesAnimaux[animalIndex].requiredColor.rarity == "common")
+        {
+            return 1;
+        }
+        else
+        {
+            if (instance.recettesAnimaux[animalIndex].requiredColor.rarity == "uncommon")
+            {
+                return 3;
+            }
+            else
+            {
+                if (instance.recettesAnimaux[animalIndex].requiredColor.rarity == "rare")
+                {
+                    return 5;
+                }
+            }
+        }
+
+        return 0;
+    }
+    
+    private int checkShapeRarity(int animalIndex)
+    {
+        if (instance.recettesAnimaux[animalIndex].requiredShape.rarity == "common")
+        {
+            return 1;
+        }
+        else
+        {
+            if (instance.recettesAnimaux[animalIndex].requiredShape.rarity == "uncommon")
+            {
+                return 3;
+            }
+            else
+            {
+                if (instance.recettesAnimaux[animalIndex].requiredShape.rarity == "rare")
+                {
+                    return 5;
+                }
+            }
+        }
+
+        return 0;
+    }
+    private int checkMotifRarity(int animalIndex)
+    {
+        if (instance.recettesAnimaux[animalIndex].requiredMotif.rarity == "common")
+        {
+            return 1;
+        }
+        else
+        {
+            if (instance.recettesAnimaux[animalIndex].requiredMotif.rarity == "uncommon")
+            {
+                return 3;
+            }
+            else
+            {
+                if (instance.recettesAnimaux[animalIndex].requiredMotif.rarity == "rare")
+                {
+                    return 5;
+                }
+            }
+        }
+
+        return 0;
+    }
+
+    public void updateScore(int choice)
+    {
+        int spliceValue = 0;
+        spliceValue += checkColorRarity(choice);
+        spliceValue += checkShapeRarity(choice);
+        spliceValue += checkMotifRarity(choice);
+        
+        int firstTimeMultiplier = 1;
+        if (instance.recettesAnimaux[choice].timesCrafted == 0)
+        {
+            firstTimeMultiplier = 5;
+        }
+        
+
+        score += spliceValue*firstTimeMultiplier;
     }
 
     public void addRessource(Ressource item)

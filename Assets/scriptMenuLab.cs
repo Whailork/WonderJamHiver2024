@@ -217,8 +217,7 @@ public class scriptMenuLab : MonoBehaviour
     private void checkForRessources()
     {
         bool notEnough = false;
-        if (GameValues.instance.getItem(requiredColor.name, GameValues.instance.inventory) <
-            requiredColor.number)
+        if (GameValues.instance.getItem(requiredColor.name, GameValues.instance.inventory) < requiredColor.number)
         {
             notEnough = true;
             colorAdd.GetComponent<Image>().color = Color.red;
@@ -230,8 +229,7 @@ public class scriptMenuLab : MonoBehaviour
             colorAdd.GetComponent<Button>().enabled = true;
         }
         
-        if (GameValues.instance.getItem(requiredShape.name, GameValues.instance.inventory) <
-            requiredColor.number)
+        if (GameValues.instance.getItem(requiredShape.name, GameValues.instance.inventory) < requiredShape.number)
         {
             notEnough = true;
             shapeAdd.GetComponent<Image>().color = Color.red;
@@ -243,8 +241,7 @@ public class scriptMenuLab : MonoBehaviour
             shapeAdd.GetComponent<Button>().enabled = true;
         }
         
-        if (GameValues.instance.getItem(requiredMotif.name, GameValues.instance.inventory) <
-            requiredColor.number)
+        if (GameValues.instance.getItem(requiredMotif.name, GameValues.instance.inventory) < requiredMotif.number)
         {
             notEnough = true;
             motifAdd.GetComponent<Image>().color = Color.red;
@@ -336,7 +333,9 @@ public class scriptMenuLab : MonoBehaviour
         motifPlaced = false;
         checkForRessources();
         checkForSplice();
-        GameValues.instance.updateScore(1);
+
+        GameValues.instance.updateScore(choice);
+        GameValues.instance.recettesAnimaux[choice].timesCrafted++;
         //SoundPlayer.instance.PlaySFX(spliceFx,2);
 
         //spinnerObject = Instantiate(spinner, image.transform.position, Quaternion.identity, canvas.transform);
