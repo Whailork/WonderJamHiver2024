@@ -21,8 +21,10 @@ public class MenuButtons : MonoBehaviour
     public void explorer()
     {
         RunManager.alertShown = false;
-        /*RunManager.currentRun = 0;
-        RunManager.roundNumber = 0;*/
+        RunManager.currentRun = 0;
+        RunManager.roundNumber = 1;
+        RunManager.newRun();
+        
         SceneManager.LoadScene("sceneShip");
         SoundPlayer.instance.SetMusic(nextSong,1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
@@ -58,6 +60,7 @@ public class MenuButtons : MonoBehaviour
 
     public void RetourMenu(GameObject alerte)
     {
+        
         RunManager.alertShown = false;
         RunManager.currentRun = 0;
         RunManager.roundNumber = 0;
@@ -65,13 +68,17 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("mainMenuScene");
         SoundPlayer.instance.SetMusic(nextSong, 1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
-        Destroy(alerte);
+        if (alerte.name != "MainMenu")
+        {
+            Destroy(alerte);
+        }
     }
     public void ContinuerExploration(GameObject alerte)
     {
         RunManager.alertShown = false;
         RunManager.newRun();
         SoundPlayer.instance.PlaySFX(btnSound,2);
+        
         Destroy(alerte);
     }
 

@@ -42,6 +42,9 @@ public class scriptMenuLab : MonoBehaviour
     
     public GameObject scoreText;
     public GameObject backGroundScoreText;
+
+
+    public GameObject CreatedCheck;
     
     private bool colorPlaced = false;
     private bool shapePlaced = false;
@@ -107,8 +110,6 @@ public class scriptMenuLab : MonoBehaviour
         choose(choice);
         SoundPlayer.instance.PlaySFX(clickBtnFx,2);
         
-        //GameValues.instance.updateScore(1);
-        //adjustScore(); // A ENLEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     public void choose(int choice)
@@ -118,10 +119,20 @@ public class scriptMenuLab : MonoBehaviour
         requiredColor = GameValues.instance.recettesAnimaux[choice].requiredColor;
         requiredShape = GameValues.instance.recettesAnimaux[choice].requiredShape;
         requiredMotif = GameValues.instance.recettesAnimaux[choice].requiredMotif;
+        //on affiche le check ou pas
+        if (GameValues.instance.recettesAnimaux[choice].timesCrafted > 0)
+        {
+            CreatedCheck.GetComponent<Image>().color = Color.white;
+        }
+        else
+        {
+            CreatedCheck.GetComponent<Image>().color = Color.black;
+        }
         
         if (choice < imagesAnimaux.Length)
         {
             image.GetComponent<Image>().sprite = imagesAnimaux[choice];
+            CreatedCheck.GetComponent<Image>().sprite = imagesAnimaux[choice];
         }
 
         switch (requiredColor.name)
@@ -146,6 +157,7 @@ public class scriptMenuLab : MonoBehaviour
                 break;
                 
         }
+        
         
         switch (requiredShape.name)
         {
@@ -324,6 +336,8 @@ public class scriptMenuLab : MonoBehaviour
         {
             Destroy(spinnerObject);
         }
+        //on fait afficher le check ou pas
+
         GameValues.instance.removeItem(requiredMotif.name,requiredMotif.number,GameValues.instance.inventory);
         GameValues.instance.removeItem(requiredShape.name,requiredShape.number,GameValues.instance.inventory);
         GameValues.instance.removeItem(requiredColor.name,requiredColor.number,GameValues.instance.inventory);
@@ -336,6 +350,15 @@ public class scriptMenuLab : MonoBehaviour
 
         GameValues.instance.updateScore(choice);
         GameValues.instance.recettesAnimaux[choice].timesCrafted++;
+        
+        if (GameValues.instance.recettesAnimaux[choice].timesCrafted > 0)
+        {
+            CreatedCheck.GetComponent<Image>().color = Color.white;
+        }
+        else
+        {
+            CreatedCheck.GetComponent<Image>().color = Color.black;
+        }
         //SoundPlayer.instance.PlaySFX(spliceFx,2);
 
         //spinnerObject = Instantiate(spinner, image.transform.position, Quaternion.identity, canvas.transform);

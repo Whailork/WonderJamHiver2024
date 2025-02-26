@@ -14,6 +14,7 @@ public class asteroidGeneratorScript : MonoBehaviour
     private string motif;
     
     public GameObject asteroid;
+    public RunManager runManager;
 
     Camera cam;
     float height;
@@ -198,6 +199,7 @@ public class asteroidGeneratorScript : MonoBehaviour
             newAsteroid.layer = 9;
             scriptAsteroide myAsteroide = newAsteroid.GetComponent<scriptAsteroide>();
             myAsteroide.createAsteroid(nbRndAsteroide());
+            myAsteroide.setRunManager(runManager);
             myAsteroide.setPosition(position);
             myAsteroide.setRangeLimit((float)Math.Sqrt((float)Math.Pow(height / 2, 2) + (float)Math.Pow(width / 2, 2)));
             RunManager.enemiesLive++;

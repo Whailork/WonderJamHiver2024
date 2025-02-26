@@ -83,10 +83,7 @@ public class RunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemiesCleared == enemiInRun && !alertShown)
-        {
-            askForNewRun();
-        }
+        
 
         /*if (starship.shipMouvement.vie == 0)
         {
@@ -94,6 +91,15 @@ public class RunManager : MonoBehaviour
         }*/
     }
 
+    
+    public void enemiKilled()
+    {
+        enemiesCleared++;
+        if (enemiesCleared == enemiInRun && !alertShown)
+        {
+            askForNewRun();
+        }
+    }
     public void askForNewRun()
     {
         roundNumber++;

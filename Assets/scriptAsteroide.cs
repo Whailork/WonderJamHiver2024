@@ -15,6 +15,7 @@ public class scriptAsteroide : MonoBehaviour
     private Color color = new Color();
 
     private string form;
+    public RunManager runManager;
     
 
     private string motif;
@@ -49,6 +50,7 @@ public class scriptAsteroide : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         setPattern();
     }
 
@@ -62,6 +64,12 @@ public class scriptAsteroide : MonoBehaviour
         // UnityEngineColor newColor = new UnityEngine.Color(myColor.R / 255f, myColor.G / 255f, myColor.B / 255f, myColor.A / 255f);
         // spriteRenderer.color = newColor;
     }
+
+    public void setRunManager(RunManager runManager)
+    {
+        this.runManager = runManager;
+    }
+       
     Color getColor()
     {
         return color;
@@ -233,7 +241,7 @@ public class scriptAsteroide : MonoBehaviour
         {
             dropLoot(this.gameObject.transform.position);
             RunManager.enemiesLive--;
-            RunManager.enemiesCleared++;
+            runManager.enemiKilled();
             Destroy(this.gameObject);
         }
         
